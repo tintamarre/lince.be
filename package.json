@@ -1,0 +1,25 @@
+{
+  "name": "Lince.be",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "Martin Erpicum",
+    "email": "martin@erpicum.net"
+  },
+  "repository": "https://github.com/tintamarre/lince.be/tintamarre.github.io",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "vuepress": "^1.7.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "vuepress-bar": "^0.3.1",
+    "webpack-server": "^0.1.2"
+  }
+}
