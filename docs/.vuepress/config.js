@@ -38,17 +38,14 @@ module.exports = {
         link: '/',
       },
       {
-        text: 'Une histoire',
-        link: '/histoire/'
+        text: 'Une bière 🍺',
+        link: '/lincette/'
       },
       {
-        text: 'Un vin',
-        link: '/vin/'
-      },
-      {
-        text: 'Une École',
+        text: 'École de Lincé 🎒',
         link: '/ecole/'
-      }
+      },
+
     ],
     // sidebar: {
     //   '/': [
