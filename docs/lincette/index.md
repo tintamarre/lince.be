@@ -19,35 +19,27 @@ La bière a été créée en 2020 à l'initiative du comité scolaire de l'écol
 - Collab'beer realisée avec l'Association de Parents de L'école de Lincé ;
 - Le résultat est une bière blonde à l'amertume douce et au profil aromatique épicé et herbacé ;
 
-## Achat 
+## Comment acheter la Lincette ?
 
+Les ventes sont organisées par le comité scolaire. Les dates sont annoncées sur l'agenda, sur facebook et via la lettre de diffusion. 
+
+
+Pour rappel, vous pouvez soit acheter un pack de 6 un pack de 24.
 
 | Quantité  | Prix  | Prix au L |
 | ---------:| -----:| -----:|
 | 6 bières de 33cl| € 15.00  | *€ {{ 15 / 6 * 3 }}/L* |
 | 24 bières de 33cl| € 50.00|  *€ {{ Math.round(50 / 24 * 10 * 3) / 10}}/L* |
 
+Pour des raisons de facilité, nous vous proposons de faire le paiement en avance sur le compte:
+`BE71 3400 2379 7269` avec en communication `lincette + votre prénom nom.`
 
-`BE71 3400 2379 7269` avec en communication `lincette + nom et prénom.`
+::: tip Confirmation 
+Pouvez-vous s'il vous plait nous confirmer si vous souhaitez commander des Lincettes afin que nous puissions nous organiser (via le groupe Facebook ou via mail [lalincette@gmail.com](lalincette@gmail.com))
+:::
 
-<!-- Bonjour à toutes et tous,
-
-Comme annoncé il y a quelques temps déjà,  nous organisons la prochaine vente de Lincettes ce vendredi 7 mai de 18 à 19h30. Toujours au même endroit à savoir devant la nouvelle cuisine de l’école .
-
-Pour rappel, vous pouvez soit acheter un pack de 6 au prix de 15€ soit un pack de 24 au prix de 50€.
-
-Pour des raisons de facilité, nous vous proposons de faire le paiement en avance sur le compte BE71 3400 2379 7269 en communication : lincette + nom et prénom.
-
-Pouvez vous svp nous confirmer si vous souhaitez commander des Lincettes afin que nous puissions nous organiser (via le groupe Facebook ou via mail lalincette@gmail.com histoire de ne pas encombrer ce WhatsApp. Merci)
-
-Vu le contexte sanitaire actuel, nous vous demandons de bien vouloir respecter les consignes de sécurité mises en place lors de l'enlèvement.
-
-N’hésitez pas à liker et partager cette publication 😉
-
-Au plaisir de pouvoir prochainement se rincer le bec tous ensemble!
-
-Lincettement vôtre,
-Le comité scolaire -->
+### Lieu
+Toujours au [même endroit à savoir devant la nouvelle cuisine de l’école](https://www.google.com/maps/@50.5123388,5.6293676,3a,75y,56.4h,87.06t/data=!3m7!1e1!3m5!1s1uUUtz4WVOi55_LbTqahoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D1uUUtz4WVOi55_LbTqahoA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D51.155308%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?hl=en-GB) .
 
 ## Page Facebook 
 - [https://www.facebook.com/groups/429847368281109](https://www.facebook.com/groups/429847368281109)

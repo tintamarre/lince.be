@@ -38,7 +38,7 @@ module.exports = {
         link: '/',
       },
       {
-        text: 'Une bière 🍺',
+        text: 'Lincette 🍺',
         link: '/lincette/'
       },
       {
