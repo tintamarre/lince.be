@@ -1,6 +1,5 @@
 <template>
 <div>
-
   <table>
     <tr v-for="info, key in infos" v-if="!key.startsWith('kitchen')">
       <th>{{ key }}</th>

@@ -42,10 +42,17 @@ module.exports = {
         link: '/lincette/'
       },
       {
-        text: 'École de Lincé 🎒',
+        text: 'École de Lincé',
         link: '/ecole/'
       },
-
+      {
+        text: 'Calendrier',
+        link: '/calendrier'
+      },
+      {
+        text: 'Contact',
+        link: '/contact'
+      },
     ],
     // sidebar: {
     //   '/': [
