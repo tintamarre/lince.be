@@ -12,3 +12,4 @@ export default ({
 }) => {
   // ...apply enhancements for the site.
 }
+

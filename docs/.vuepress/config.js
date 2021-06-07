@@ -1,5 +1,6 @@
 const { description } = require('../../package')
 
+
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -74,5 +75,9 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    'qrcode',{
+      labelText:'Mobile Read', // displayed text
+      size:'small' // QR code size
+  }
   ]
 }
