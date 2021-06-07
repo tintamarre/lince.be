@@ -12,20 +12,22 @@
     </tr> 
     <tr v-for="product in products">
       <td><a @click="(sum = sum + product.price) && caddy.push(product)">{{ product.name }} </a></td>
-      <td class="data"> {{ product.qty }} 🍺  </td>
-      <td class="data"> € {{ product.price }}</td>
+      <td class="data">{{ product.qty }} 🍺  </td>
+      <td class="data">€ {{ product.price }}</td>
       <!-- <td class="data">€ {{ product.price / product.qty * 3 }}</td> -->
+      </tr>
+      <tr v-if="sum != 0">
+        <td colspan="3">
+         <small>
+             <ul>
+                <li v-for="item in caddy">{{ item.name }} de {{ item.qty }}</li>
+            </ul>
+        </small>
+        </td>
       </tr>
 
       <tr v-if="sum != 0">
       <th colspan="2" class="data">Total
-          <br>
-          <small>
-<ul>
-                  <li v-for="item in caddy">{{ item.name }} de {{ item.qty }} </li>
-                
-    </ul>
-          </small>
       </th>
       <td class="data">€ {{ sum }}
           <br>
