@@ -14,6 +14,9 @@ sidebar: auto
 
 - Envie de s'impliquer dans la vie associative de l'école ?
 
+### Liste de discussion du comité scolaire
+
+[Liste de discussion](https://framalistes.org/sympa/subscribe/comite.scolaire.lince)
 
 ### Liste de diffusion de l'école gérée par le comité scolaire
 

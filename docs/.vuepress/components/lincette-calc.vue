@@ -66,6 +66,11 @@ export default {
         qty: 24,
         price: 50
         },
+           {
+        name: 'Verre Lincette (pas encore disponible)',
+        qty: 1,
+        price: 3
+        },
 
           ]
       }
