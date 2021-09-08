@@ -7,18 +7,16 @@ sidebar: auto
 
 ## Comité scolaire
 
+- Président: Valéry
+- Trésorier: Augustin
 
-## Composition
+::: tip Rejoindre le comité scolaire
+Envie de s'impliquer dans la vie associative de l'école ?
+:::
 
-### Rejoindre le comité scolaire
+**Liste de discussion du comité scolaire** : [Liste de discussion](https://framalistes.org/sympa/subscribe/comite.scolaire.lince)
 
-- Envie de s'impliquer dans la vie associative de l'école ?
-
-### Liste de discussion du comité scolaire
-
-[Liste de discussion](https://framalistes.org/sympa/subscribe/comite.scolaire.lince)
-
-### Liste de diffusion de l'école gérée par le comité scolaire
+**Liste de diffusion de l'école gérée par le comité scolaire** 
 
 <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
