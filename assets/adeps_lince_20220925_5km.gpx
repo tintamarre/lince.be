@@ -1,0 +1,700 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx version="1.1" creator="outdooractive - http://www.outdooractive.com"; xmlns="http://www.topografix.com/GPX/1/1"; xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"; xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"; xmlns:oa="http://www.outdooractive.com/GPX/Extensions/1";>
+  <metadata>
+    <name>Marche Adeps Lincé 2022 - 5 Km</name>
+    <author>
+      <name>Mathieu Claeys - Communauté</name>
+    </author>
+    <link href="https://www.outdooractive.com/r/252616526"/>
+    <time>2022-09-17T10:14:32.300</time>
+    <extensions>
+      <oa:oaCategory>hikingTourTrail</oa:oaCategory>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>Marche Adeps Lincé 2022 - 5 Km</name>
+    <desc>Marche Adeps Lincé 2022 - 5 Km</desc>
+    <type>hikingTourTrail</type>
+    <trkseg>
+      <trkpt lat="50.512737" lon="5.629928">
+        <ele>268.19186</ele>
+        <extensions>
+          <oa:address>[country:Belgique, streetAddress:Rue de l&apos;Enseignement 5, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.512739" lon="5.629907">
+        <ele>268.22958</ele>
+      </trkpt>
+      <trkpt lat="50.51275" lon="5.629835">
+        <ele>268.3995</ele>
+      </trkpt>
+      <trkpt lat="50.512788" lon="5.629766">
+        <ele>268.77082</ele>
+      </trkpt>
+      <trkpt lat="50.512822" lon="5.629672">
+        <ele>269.11573</ele>
+      </trkpt>
+      <trkpt lat="50.512913" lon="5.629382">
+        <ele>269.87265</ele>
+      </trkpt>
+      <trkpt lat="50.512994" lon="5.629208">
+        <ele>270.27185</ele>
+      </trkpt>
+      <trkpt lat="50.513058" lon="5.629128">
+        <ele>270.52307</ele>
+      </trkpt>
+      <trkpt lat="50.513169" lon="5.629014">
+        <ele>270.94056</ele>
+      </trkpt>
+      <trkpt lat="50.513273" lon="5.628894">
+        <ele>271.39184</ele>
+      </trkpt>
+      <trkpt lat="50.513219" lon="5.628777">
+        <ele>271.02993</ele>
+      </trkpt>
+      <trkpt lat="50.513107" lon="5.628193">
+        <ele>271.33892</ele>
+      </trkpt>
+      <trkpt lat="50.513079" lon="5.628035">
+        <ele>271.90873</ele>
+      </trkpt>
+      <trkpt lat="50.513009" lon="5.627634">
+        <ele>273.53962</ele>
+      </trkpt>
+      <trkpt lat="50.512965" lon="5.627383">
+        <ele>274.28831</ele>
+      </trkpt>
+      <trkpt lat="50.51292" lon="5.627215">
+        <ele>274.66291</ele>
+      </trkpt>
+      <trkpt lat="50.512785" lon="5.626712">
+        <ele>275.18156</ele>
+      </trkpt>
+      <trkpt lat="50.512629" lon="5.626131">
+        <ele>273.48994</ele>
+      </trkpt>
+      <trkpt lat="50.512598" lon="5.625928">
+        <ele>272.9174</ele>
+      </trkpt>
+      <trkpt lat="50.512522" lon="5.625242">
+        <ele>272.00629</ele>
+      </trkpt>
+      <trkpt lat="50.512446" lon="5.624555">
+        <ele>272.50529</ele>
+      </trkpt>
+      <trkpt lat="50.512583" lon="5.624237">
+        <ele>274.43144</ele>
+      </trkpt>
+      <trkpt lat="50.51272" lon="5.623919">
+        <ele>275.86793</ele>
+      </trkpt>
+      <trkpt lat="50.512799" lon="5.623799">
+        <ele>276.32336</ele>
+      </trkpt>
+      <trkpt lat="50.512878" lon="5.623734">
+        <ele>276.55203</ele>
+      </trkpt>
+      <trkpt lat="50.512939" lon="5.623684">
+        <ele>276.65654</ele>
+      </trkpt>
+      <trkpt lat="50.51307" lon="5.623577">
+        <ele>276.7395</ele>
+      </trkpt>
+      <trkpt lat="50.513507" lon="5.623447">
+        <ele>277.9525</ele>
+      </trkpt>
+      <trkpt lat="50.513944" lon="5.623318">
+        <ele>280.82415</ele>
+      </trkpt>
+      <trkpt lat="50.514108" lon="5.623251">
+        <ele>281.63844</ele>
+      </trkpt>
+      <trkpt lat="50.514108" lon="5.623251">
+        <ele>281.63844</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue de l&apos;Epargne, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.51416" lon="5.623229">
+        <ele>281.81179</ele>
+      </trkpt>
+      <trkpt lat="50.51441" lon="5.623114">
+        <ele>282.27168</ele>
+      </trkpt>
+      <trkpt lat="50.514659" lon="5.622998">
+        <ele>282.33691</ele>
+      </trkpt>
+      <trkpt lat="50.514851" lon="5.622798">
+        <ele>281.8238</ele>
+      </trkpt>
+      <trkpt lat="50.514942" lon="5.62323">
+        <ele>282.90141</ele>
+      </trkpt>
+      <trkpt lat="50.515034" lon="5.623662">
+        <ele>283.0616</ele>
+      </trkpt>
+      <trkpt lat="50.515166" lon="5.624282">
+        <ele>282.94078</ele>
+      </trkpt>
+      <trkpt lat="50.515298" lon="5.624902">
+        <ele>283.50139</ele>
+      </trkpt>
+      <trkpt lat="50.51543" lon="5.625523">
+        <ele>283.66346</ele>
+      </trkpt>
+      <trkpt lat="50.515562" lon="5.626143">
+        <ele>283.79338</ele>
+      </trkpt>
+      <trkpt lat="50.515654" lon="5.626764">
+        <ele>284.07444</ele>
+      </trkpt>
+      <trkpt lat="50.515746" lon="5.627385">
+        <ele>284.0421</ele>
+      </trkpt>
+      <trkpt lat="50.515836" lon="5.627938">
+        <ele>284.00022</ele>
+      </trkpt>
+      <trkpt lat="50.515927" lon="5.628492">
+        <ele>284.04935</ele>
+      </trkpt>
+      <trkpt lat="50.516017" lon="5.629045">
+        <ele>283.95479</ele>
+      </trkpt>
+      <trkpt lat="50.515995" lon="5.629233">
+        <ele>283.86072</ele>
+      </trkpt>
+      <trkpt lat="50.516008" lon="5.62925">
+        <ele>283.83114</ele>
+      </trkpt>
+      <trkpt lat="50.516023" lon="5.629283">
+        <ele>283.78232</ele>
+      </trkpt>
+      <trkpt lat="50.51603" lon="5.629335">
+        <ele>283.72141</ele>
+      </trkpt>
+      <trkpt lat="50.516025" lon="5.629374">
+        <ele>283.68652</ele>
+      </trkpt>
+      <trkpt lat="50.516013" lon="5.629406">
+        <ele>283.6663</ele>
+      </trkpt>
+      <trkpt lat="50.515992" lon="5.629432">
+        <ele>283.66132</ele>
+      </trkpt>
+      <trkpt lat="50.516016" lon="5.629486">
+        <ele>283.56688</ele>
+      </trkpt>
+      <trkpt lat="50.516089" lon="5.629642">
+        <ele>283.25632</ele>
+      </trkpt>
+      <trkpt lat="50.516151" lon="5.629812">
+        <ele>282.92328</ele>
+      </trkpt>
+      <trkpt lat="50.516201" lon="5.629997">
+        <ele>282.61516</ele>
+      </trkpt>
+      <trkpt lat="50.516268" lon="5.630498">
+        <ele>282.15738</ele>
+      </trkpt>
+      <trkpt lat="50.516268" lon="5.630498">
+        <ele>282.15738</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue Pionfosse 1, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.516274" lon="5.630544">
+        <ele>282.12452</ele>
+      </trkpt>
+      <trkpt lat="50.516333" lon="5.630996">
+        <ele>281.69867</ele>
+      </trkpt>
+      <trkpt lat="50.516391" lon="5.631448">
+        <ele>281.05288</ele>
+      </trkpt>
+      <trkpt lat="50.516444" lon="5.631851">
+        <ele>280.25008</ele>
+      </trkpt>
+      <trkpt lat="50.516497" lon="5.632255">
+        <ele>279.17075</ele>
+      </trkpt>
+      <trkpt lat="50.51651" lon="5.632457">
+        <ele>278.64457</ele>
+      </trkpt>
+      <trkpt lat="50.516512" lon="5.632521">
+        <ele>278.49092</ele>
+      </trkpt>
+      <trkpt lat="50.516503" lon="5.632689">
+        <ele>278.10559</ele>
+      </trkpt>
+      <trkpt lat="50.516492" lon="5.63277">
+        <ele>277.93493</ele>
+      </trkpt>
+      <trkpt lat="50.516417" lon="5.633172">
+        <ele>277.31846</ele>
+      </trkpt>
+      <trkpt lat="50.516342" lon="5.633573">
+        <ele>277.33032</ele>
+      </trkpt>
+      <trkpt lat="50.516318" lon="5.633764">
+        <ele>277.47425</ele>
+      </trkpt>
+      <trkpt lat="50.516315" lon="5.633965">
+        <ele>277.58489</ele>
+      </trkpt>
+      <trkpt lat="50.51634" lon="5.634291">
+        <ele>277.62813</ele>
+      </trkpt>
+      <trkpt lat="50.516426" lon="5.634844">
+        <ele>277.43603</ele>
+      </trkpt>
+      <trkpt lat="50.516534" lon="5.635415">
+        <ele>277.76084</ele>
+      </trkpt>
+      <trkpt lat="50.51667" lon="5.636018">
+        <ele>278.4631</ele>
+      </trkpt>
+      <trkpt lat="50.516806" lon="5.636622">
+        <ele>279.06801</ele>
+      </trkpt>
+      <trkpt lat="50.516829" lon="5.63673">
+        <ele>279.04531</ele>
+      </trkpt>
+      <trkpt lat="50.516829" lon="5.63673">
+        <ele>279.04531</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue Pionfosse 47, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.516938" lon="5.637227">
+        <ele>278.29635</ele>
+      </trkpt>
+      <trkpt lat="50.517027" lon="5.63767">
+        <ele>277.88885</ele>
+      </trkpt>
+      <trkpt lat="50.517075" lon="5.637924">
+        <ele>277.85252</ele>
+      </trkpt>
+      <trkpt lat="50.517129" lon="5.638233">
+        <ele>277.84811</ele>
+      </trkpt>
+      <trkpt lat="50.517178" lon="5.638574">
+        <ele>277.94952</ele>
+      </trkpt>
+      <trkpt lat="50.517253" lon="5.639178">
+        <ele>278.48973</ele>
+      </trkpt>
+      <trkpt lat="50.517264" lon="5.63924">
+        <ele>278.54566</ele>
+      </trkpt>
+      <trkpt lat="50.51732" lon="5.639587">
+        <ele>279.01933</ele>
+      </trkpt>
+      <trkpt lat="50.517375" lon="5.639935">
+        <ele>279.41672</ele>
+      </trkpt>
+      <trkpt lat="50.517449" lon="5.640434">
+        <ele>279.26858</ele>
+      </trkpt>
+      <trkpt lat="50.517522" lon="5.640934">
+        <ele>278.97908</ele>
+      </trkpt>
+      <trkpt lat="50.517622" lon="5.64101">
+        <ele>278.8147</ele>
+      </trkpt>
+      <trkpt lat="50.517912" lon="5.641331">
+        <ele>278.40796</ele>
+      </trkpt>
+      <trkpt lat="50.518044" lon="5.641476">
+        <ele>278.25303</ele>
+      </trkpt>
+      <trkpt lat="50.518191" lon="5.641629">
+        <ele>278.12514</ele>
+      </trkpt>
+      <trkpt lat="50.518346" lon="5.641772">
+        <ele>278.09177</ele>
+      </trkpt>
+      <trkpt lat="50.518531" lon="5.641913">
+        <ele>278.14006</ele>
+      </trkpt>
+      <trkpt lat="50.518756" lon="5.642077">
+        <ele>278.24639</ele>
+      </trkpt>
+      <trkpt lat="50.518981" lon="5.64224">
+        <ele>278.4617</ele>
+      </trkpt>
+      <trkpt lat="50.519155" lon="5.642365">
+        <ele>278.78325</ele>
+      </trkpt>
+      <trkpt lat="50.519155" lon="5.642365">
+        <ele>278.78325</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue du Champay 7, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.519318" lon="5.642483">
+        <ele>279.30745</ele>
+      </trkpt>
+      <trkpt lat="50.519564" lon="5.642654">
+        <ele>280.44797</ele>
+      </trkpt>
+      <trkpt lat="50.5199" lon="5.642901">
+        <ele>281.92289</ele>
+      </trkpt>
+      <trkpt lat="50.519964" lon="5.643031">
+        <ele>282.32158</ele>
+      </trkpt>
+      <trkpt lat="50.520184" lon="5.64332">
+        <ele>283.0307</ele>
+      </trkpt>
+      <trkpt lat="50.520321" lon="5.643523">
+        <ele>283.3308</ele>
+      </trkpt>
+      <trkpt lat="50.520404" lon="5.643663">
+        <ele>283.46164</ele>
+      </trkpt>
+      <trkpt lat="50.520458" lon="5.643774">
+        <ele>283.54027</ele>
+      </trkpt>
+      <trkpt lat="50.520529" lon="5.643876">
+        <ele>283.55433</ele>
+      </trkpt>
+      <trkpt lat="50.520758" lon="5.644192">
+        <ele>283.32549</ele>
+      </trkpt>
+      <trkpt lat="50.520986" lon="5.644507">
+        <ele>282.67585</ele>
+      </trkpt>
+      <trkpt lat="50.521071" lon="5.644802">
+        <ele>282.53356</ele>
+      </trkpt>
+      <trkpt lat="50.521152" lon="5.64517">
+        <ele>282.23978</ele>
+      </trkpt>
+      <trkpt lat="50.521182" lon="5.645363">
+        <ele>282.04494</ele>
+      </trkpt>
+      <trkpt lat="50.52126" lon="5.645845">
+        <ele>281.42975</ele>
+      </trkpt>
+      <trkpt lat="50.521287" lon="5.646521">
+        <ele>281.24502</ele>
+      </trkpt>
+      <trkpt lat="50.521298" lon="5.646686">
+        <ele>281.15003</ele>
+      </trkpt>
+      <trkpt lat="50.521364" lon="5.647241">
+        <ele>280.49581</ele>
+      </trkpt>
+      <trkpt lat="50.521442" lon="5.647777">
+        <ele>279.85615</ele>
+      </trkpt>
+      <trkpt lat="50.521514" lon="5.648271">
+        <ele>279.28001</ele>
+      </trkpt>
+      <trkpt lat="50.521431" lon="5.64829">
+        <ele>280.02336</ele>
+      </trkpt>
+      <trkpt lat="50.521292" lon="5.648307">
+        <ele>281.30098</ele>
+      </trkpt>
+      <trkpt lat="50.521115" lon="5.648304">
+        <ele>282.88408</ele>
+      </trkpt>
+      <trkpt lat="50.520877" lon="5.648246">
+        <ele>284.66301</ele>
+      </trkpt>
+      <trkpt lat="50.52064" lon="5.648188">
+        <ele>285.91485</ele>
+      </trkpt>
+      <trkpt lat="50.520615" lon="5.648179">
+        <ele>286.0233</ele>
+      </trkpt>
+      <trkpt lat="50.520615" lon="5.648179">
+        <ele>286.0233</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue Sart le Coq 1, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.520537" lon="5.64815">
+        <ele>286.33853</ele>
+      </trkpt>
+      <trkpt lat="50.520358" lon="5.648122">
+        <ele>286.98856</ele>
+      </trkpt>
+      <trkpt lat="50.520131" lon="5.648095">
+        <ele>287.60041</ele>
+      </trkpt>
+      <trkpt lat="50.519904" lon="5.648069">
+        <ele>287.96482</ele>
+      </trkpt>
+      <trkpt lat="50.5198" lon="5.648054">
+        <ele>288.03038</ele>
+      </trkpt>
+      <trkpt lat="50.519467" lon="5.648107">
+        <ele>288.04074</ele>
+      </trkpt>
+      <trkpt lat="50.519135" lon="5.648161">
+        <ele>287.64636</ele>
+      </trkpt>
+      <trkpt lat="50.518802" lon="5.648214">
+        <ele>286.48106</ele>
+      </trkpt>
+      <trkpt lat="50.518502" lon="5.648286">
+        <ele>285.33086</ele>
+      </trkpt>
+      <trkpt lat="50.518199" lon="5.648374">
+        <ele>284.99084</ele>
+      </trkpt>
+      <trkpt lat="50.517971" lon="5.648415">
+        <ele>285.29968</ele>
+      </trkpt>
+      <trkpt lat="50.517743" lon="5.648455">
+        <ele>285.78432</ele>
+      </trkpt>
+      <trkpt lat="50.517519" lon="5.64849">
+        <ele>286.11416</ele>
+      </trkpt>
+      <trkpt lat="50.517294" lon="5.648525">
+        <ele>286.18788</ele>
+      </trkpt>
+      <trkpt lat="50.517135" lon="5.648535">
+        <ele>286.1725</ele>
+      </trkpt>
+      <trkpt lat="50.51693" lon="5.648538">
+        <ele>286.07182</ele>
+      </trkpt>
+      <trkpt lat="50.516894" lon="5.647897">
+        <ele>285.23476</ele>
+      </trkpt>
+      <trkpt lat="50.516875" lon="5.647462">
+        <ele>284.02433</ele>
+      </trkpt>
+      <trkpt lat="50.516856" lon="5.647027">
+        <ele>283.49307</ele>
+      </trkpt>
+      <trkpt lat="50.516834" lon="5.646432">
+        <ele>282.52049</ele>
+      </trkpt>
+      <trkpt lat="50.516813" lon="5.645837">
+        <ele>281.02064</ele>
+      </trkpt>
+      <trkpt lat="50.516792" lon="5.645242">
+        <ele>279.64449</ele>
+      </trkpt>
+      <trkpt lat="50.51679" lon="5.645092">
+        <ele>279.2578</ele>
+      </trkpt>
+      <trkpt lat="50.51679" lon="5.645092">
+        <ele>279.2578</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue de Beauval 26, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.516784" lon="5.644608">
+        <ele>277.71319</ele>
+      </trkpt>
+      <trkpt lat="50.516835" lon="5.644027">
+        <ele>275.66155</ele>
+      </trkpt>
+      <trkpt lat="50.516851" lon="5.643749">
+        <ele>274.46425</ele>
+      </trkpt>
+      <trkpt lat="50.516849" lon="5.64355">
+        <ele>273.72937</ele>
+      </trkpt>
+      <trkpt lat="50.516828" lon="5.643362">
+        <ele>273.32408</ele>
+      </trkpt>
+      <trkpt lat="50.516724" lon="5.642937">
+        <ele>273.84286</ele>
+      </trkpt>
+      <trkpt lat="50.516657" lon="5.642483">
+        <ele>274.98629</ele>
+      </trkpt>
+      <trkpt lat="50.51659" lon="5.642029">
+        <ele>275.00808</ele>
+      </trkpt>
+      <trkpt lat="50.516585" lon="5.641408">
+        <ele>276.33785</ele>
+      </trkpt>
+      <trkpt lat="50.516579" lon="5.640786">
+        <ele>278.90835</ele>
+      </trkpt>
+      <trkpt lat="50.516574" lon="5.640165">
+        <ele>280.78651</ele>
+      </trkpt>
+      <trkpt lat="50.516549" lon="5.639958">
+        <ele>281.19618</ele>
+      </trkpt>
+      <trkpt lat="50.516493" lon="5.639604">
+        <ele>281.56644</ele>
+      </trkpt>
+      <trkpt lat="50.516438" lon="5.63925">
+        <ele>281.81757</ele>
+      </trkpt>
+      <trkpt lat="50.516426" lon="5.639179">
+        <ele>281.89642</ele>
+      </trkpt>
+      <trkpt lat="50.51637" lon="5.638529">
+        <ele>282.57635</ele>
+      </trkpt>
+      <trkpt lat="50.516313" lon="5.63788">
+        <ele>282.34799</ele>
+      </trkpt>
+      <trkpt lat="50.516313" lon="5.637771">
+        <ele>282.18055</ele>
+      </trkpt>
+      <trkpt lat="50.516324" lon="5.637677">
+        <ele>281.99306</ele>
+      </trkpt>
+      <trkpt lat="50.51636" lon="5.637507">
+        <ele>281.63213</ele>
+      </trkpt>
+      <trkpt lat="50.516409" lon="5.637403">
+        <ele>281.33288</ele>
+      </trkpt>
+      <trkpt lat="50.516274" lon="5.637012">
+        <ele>281.84518</ele>
+      </trkpt>
+      <trkpt lat="50.516126" lon="5.636591">
+        <ele>281.84145</ele>
+      </trkpt>
+      <trkpt lat="50.515978" lon="5.636171">
+        <ele>281.35227</ele>
+      </trkpt>
+      <trkpt lat="50.515833" lon="5.635756">
+        <ele>280.90749</ele>
+      </trkpt>
+      <trkpt lat="50.51564" lon="5.635229">
+        <ele>280.45097</ele>
+      </trkpt>
+      <trkpt lat="50.515493" lon="5.634874">
+        <ele>280.0407</ele>
+      </trkpt>
+      <trkpt lat="50.515359" lon="5.634558">
+        <ele>279.37972</ele>
+      </trkpt>
+      <trkpt lat="50.515359" lon="5.634558">
+        <ele>279.37972</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue d&apos;Ogné 37, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.515331" lon="5.63449">
+        <ele>279.21807</ele>
+      </trkpt>
+      <trkpt lat="50.515135" lon="5.634023">
+        <ele>278.29709</ele>
+      </trkpt>
+      <trkpt lat="50.514993" lon="5.633672">
+        <ele>277.85658</ele>
+      </trkpt>
+      <trkpt lat="50.514951" lon="5.633568">
+        <ele>277.74306</ele>
+      </trkpt>
+      <trkpt lat="50.514861" lon="5.633327">
+        <ele>277.53188</ele>
+      </trkpt>
+      <trkpt lat="50.514778" lon="5.633097">
+        <ele>277.45597</ele>
+      </trkpt>
+      <trkpt lat="50.51472" lon="5.632921">
+        <ele>277.51233</ele>
+      </trkpt>
+      <trkpt lat="50.514595" lon="5.632406">
+        <ele>277.9137</ele>
+      </trkpt>
+      <trkpt lat="50.514541" lon="5.632205">
+        <ele>277.9335</ele>
+      </trkpt>
+      <trkpt lat="50.514472" lon="5.632052">
+        <ele>277.80636</ele>
+      </trkpt>
+      <trkpt lat="50.514399" lon="5.631942">
+        <ele>277.61151</ele>
+      </trkpt>
+      <trkpt lat="50.514142" lon="5.631872">
+        <ele>276.5996</ele>
+      </trkpt>
+      <trkpt lat="50.514075" lon="5.631844">
+        <ele>276.34943</ele>
+      </trkpt>
+      <trkpt lat="50.513878" lon="5.631746">
+        <ele>275.64183</ele>
+      </trkpt>
+      <trkpt lat="50.513692" lon="5.631636">
+        <ele>274.9553</ele>
+      </trkpt>
+      <trkpt lat="50.513573" lon="5.631503">
+        <ele>274.50841</ele>
+      </trkpt>
+      <trkpt lat="50.513287" lon="5.631314">
+        <ele>272.83352</ele>
+      </trkpt>
+      <trkpt lat="50.513001" lon="5.631126">
+        <ele>270.68805</ele>
+      </trkpt>
+      <trkpt lat="50.512942" lon="5.631052">
+        <ele>270.1281</ele>
+      </trkpt>
+      <trkpt lat="50.51285" lon="5.630923">
+        <ele>269.20567</ele>
+      </trkpt>
+      <trkpt lat="50.512773" lon="5.630776">
+        <ele>268.44049</ele>
+      </trkpt>
+      <trkpt lat="50.512732" lon="5.630636">
+        <ele>268.01863</ele>
+      </trkpt>
+      <trkpt lat="50.512728" lon="5.630591">
+        <ele>267.96716</ele>
+      </trkpt>
+      <trkpt lat="50.512715" lon="5.630451">
+        <ele>267.81805</ele>
+      </trkpt>
+      <trkpt lat="50.512719" lon="5.630222">
+        <ele>267.86749</ele>
+      </trkpt>
+      <trkpt lat="50.512719" lon="5.630222">
+        <ele>267.86749</ele>
+        <extensions>
+          <oa:locType>routingNode</oa:locType>
+          <oa:address>[country:Belgique, streetAddress:Rue de l&apos;Enseignement 5, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge]</oa:address>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.51272" lon="5.630182">
+        <ele>267.88862</ele>
+      </trkpt>
+      <trkpt lat="50.512739" lon="5.629907">
+        <ele>268.22958</ele>
+      </trkpt>
+      <trkpt lat="50.51275" lon="5.629835">
+        <ele>268.3995</ele>
+      </trkpt>
+      <trkpt lat="50.512695" lon="5.629794">
+        <ele>268.02453</ele>
+      </trkpt>
+      <trkpt lat="50.512665" lon="5.629657">
+        <ele>268.04623</ele>
+      </trkpt>
+      <trkpt lat="50.512618" lon="5.629552">
+        <ele>267.938</ele>
+      </trkpt>
+      <trkpt lat="50.51253" lon="5.629444">
+        <ele>267.56599</ele>
+        <name>Salle Tony Delgombe &amp; Lionel</name>
+        <extensions>
+          <oa:address>[country:Belgique, streetAddress:Rue Henri Simon, town:Sprimont, zipcode:4140, county:LiÃ¨ge, state:LiÃ¨ge, title:Salle Tony Delgombe &amp; Lionel]</oa:address>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
