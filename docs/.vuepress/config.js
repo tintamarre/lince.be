@@ -38,10 +38,10 @@ module.exports = {
         text: 'Accueil',
         link: '/',
       },
-      {
-        text: 'Lincette 🍺',
-        link: '/lincette/'
-      },
+      // {
+      //   text: 'Lincette 🍺',
+      //   link: '/lincette/'
+      // },
       {
         text: 'École de Lincé',
         link: '/ecole/'
