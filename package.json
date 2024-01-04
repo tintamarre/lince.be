@@ -9,8 +9,9 @@
   },
   "repository": "https://github.com/tintamarre/lince.be",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
+    "docs:dev": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
+    "docs:build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs"
   },
   "license": "MIT",
   "devDependencies": {
