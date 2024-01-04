@@ -7,7 +7,7 @@
     "name": "Martin Erpicum",
     "email": "martin@erpicum.net"
   },
-  "repository": "https://github.com/tintamarre/lince.be/tintamarre.github.io",
+  "repository": "https://github.com/tintamarre/lince.be",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
