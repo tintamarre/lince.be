@@ -42,18 +42,18 @@ module.exports = {
       //   text: 'Lincette 🍺',
       //   link: '/lincette/'
       // },
-      {
-        text: 'École de Lincé',
-        link: '/ecole/'
-      },
-      {
-        text: 'Calendrier',
-        link: '/calendrier'
-      },
-      {
-        text: 'Contact',
-        link: '/contact'
-      },
+      // {
+      //   text: 'École de Lincé',
+      //   link: '/ecole/'
+      // },
+      // {
+      //   text: 'Calendrier',
+      //   link: '/calendrier'
+      // },
+      // {
+      //   text: 'Contact',
+      //   link: '/contact'
+      // },
     ],
     // sidebar: {
     //   '/': [

@@ -64,7 +64,7 @@ export default {
         {
         name: 'Caisse',
         qty: 24,
-        price: 50
+        price: 55
         },
            {
         name: 'Verre Lincette (pas encore disponible)',
