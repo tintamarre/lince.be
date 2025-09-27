@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx version="1.1" creator="outdooractive - http://www.outdooractive.com" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:oa="http://www.outdooractive.com/GPX/Extensions/1">
+  <metadata>
+    <name>5 km Marche Adeps 2025</name>
+    <author>
+      <name>Mathieu Claeys - Communauté</name>
+    </author>
+    <link href="https://www.outdooractive.com/r/325283058"/>
+    <time>2025-09-01T07:40:54.535Z</time>
+    <extensions>
+      <oa:oaCategory>hikingTourTrail</oa:oaCategory>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>5 km Marche Adeps 2025</name>
+    <type>hikingTourTrail</type>
+    <trkseg>
+      <trkpt lat="50.512615" lon="5.629549">
+        <ele>266.6</ele>
+        <name>Rue de l&apos;Enseignement, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.512618" lon="5.629552">
+        <ele>266.6</ele>
+      </trkpt>
+      <trkpt lat="50.512665" lon="5.629657">
+        <ele>267.1</ele>
+      </trkpt>
+      <trkpt lat="50.512695" lon="5.629794">
+        <ele>267.4</ele>
+      </trkpt>
+      <trkpt lat="50.51275" lon="5.629835">
+        <ele>267.8</ele>
+      </trkpt>
+      <trkpt lat="50.512739" lon="5.629907">
+        <ele>267.6</ele>
+      </trkpt>
+      <trkpt lat="50.512719" lon="5.630182">
+        <ele>268.3</ele>
+      </trkpt>
+      <trkpt lat="50.512715" lon="5.630451">
+        <ele>268.6</ele>
+      </trkpt>
+      <trkpt lat="50.512728" lon="5.63059">
+        <ele>268.7</ele>
+      </trkpt>
+      <trkpt lat="50.512732" lon="5.630636">
+        <ele>268.7</ele>
+      </trkpt>
+      <trkpt lat="50.512773" lon="5.630776">
+        <ele>269.0</ele>
+      </trkpt>
+      <trkpt lat="50.51285" lon="5.630923">
+        <ele>269.3</ele>
+      </trkpt>
+      <trkpt lat="50.512942" lon="5.631052">
+        <ele>270.1</ele>
+      </trkpt>
+      <trkpt lat="50.513001" lon="5.631126">
+        <ele>270.7</ele>
+      </trkpt>
+      <trkpt lat="50.513287" lon="5.631314">
+        <ele>271.7</ele>
+      </trkpt>
+      <trkpt lat="50.513426" lon="5.631406">
+        <ele>272.7</ele>
+        <name>Rue de l&apos;Enseignement, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.513573" lon="5.631503">
+        <ele>273.8</ele>
+      </trkpt>
+      <trkpt lat="50.513692" lon="5.631637">
+        <ele>274.3</ele>
+      </trkpt>
+      <trkpt lat="50.513878" lon="5.631747">
+        <ele>274.9</ele>
+      </trkpt>
+      <trkpt lat="50.514075" lon="5.631845">
+        <ele>275.7</ele>
+      </trkpt>
+      <trkpt lat="50.514142" lon="5.631872">
+        <ele>276.0</ele>
+      </trkpt>
+      <trkpt lat="50.514399" lon="5.631942">
+        <ele>276.8</ele>
+      </trkpt>
+      <trkpt lat="50.514472" lon="5.632052">
+        <ele>276.8</ele>
+      </trkpt>
+      <trkpt lat="50.514541" lon="5.632205">
+        <ele>276.7</ele>
+      </trkpt>
+      <trkpt lat="50.514595" lon="5.632406">
+        <ele>276.7</ele>
+      </trkpt>
+      <trkpt lat="50.51472" lon="5.632921">
+        <ele>276.4</ele>
+      </trkpt>
+      <trkpt lat="50.514778" lon="5.633097">
+        <ele>276.3</ele>
+      </trkpt>
+      <trkpt lat="50.514861" lon="5.633327">
+        <ele>277.1</ele>
+      </trkpt>
+      <trkpt lat="50.514951" lon="5.633568">
+        <ele>277.7</ele>
+      </trkpt>
+      <trkpt lat="50.514994" lon="5.633672">
+        <ele>278.2</ele>
+      </trkpt>
+      <trkpt lat="50.515135" lon="5.634023">
+        <ele>279.7</ele>
+      </trkpt>
+      <trkpt lat="50.515331" lon="5.63449">
+        <ele>281.0</ele>
+      </trkpt>
+      <trkpt lat="50.515493" lon="5.634874">
+        <ele>280.6</ele>
+      </trkpt>
+      <trkpt lat="50.515586" lon="5.635098">
+        <ele>280.7</ele>
+        <name>Rue d&apos;Ogné, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.51564" lon="5.635229">
+        <ele>280.8</ele>
+      </trkpt>
+      <trkpt lat="50.515833" lon="5.635756">
+        <ele>281.0</ele>
+      </trkpt>
+      <trkpt lat="50.515978" lon="5.636171">
+        <ele>281.7</ele>
+      </trkpt>
+      <trkpt lat="50.516126" lon="5.636591">
+        <ele>281.9</ele>
+      </trkpt>
+      <trkpt lat="50.516274" lon="5.637012">
+        <ele>282.7</ele>
+      </trkpt>
+      <trkpt lat="50.516409" lon="5.637403">
+        <ele>281.8</ele>
+      </trkpt>
+      <trkpt lat="50.516597" lon="5.637983">
+        <ele>280.6</ele>
+      </trkpt>
+      <trkpt lat="50.516681" lon="5.638175">
+        <ele>279.8</ele>
+      </trkpt>
+      <trkpt lat="50.516923" lon="5.63869">
+        <ele>279.3</ele>
+      </trkpt>
+      <trkpt lat="50.51704" lon="5.638917">
+        <ele>280.2</ele>
+      </trkpt>
+      <trkpt lat="50.517149" lon="5.639083">
+        <ele>281.0</ele>
+      </trkpt>
+      <trkpt lat="50.517253" lon="5.639178">
+        <ele>280.8</ele>
+      </trkpt>
+      <trkpt lat="50.517264" lon="5.63924">
+        <ele>280.8</ele>
+      </trkpt>
+      <trkpt lat="50.517319" lon="5.639587">
+        <ele>280.1</ele>
+      </trkpt>
+      <trkpt lat="50.517375" lon="5.639935">
+        <ele>279.1</ele>
+      </trkpt>
+      <trkpt lat="50.517449" lon="5.640434">
+        <ele>278.1</ele>
+      </trkpt>
+      <trkpt lat="50.517522" lon="5.640934">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.517622" lon="5.64101">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.517912" lon="5.641331">
+        <ele>278.9</ele>
+      </trkpt>
+      <trkpt lat="50.518044" lon="5.641476">
+        <ele>279.1</ele>
+      </trkpt>
+      <trkpt lat="50.518191" lon="5.641629">
+        <ele>278.5</ele>
+      </trkpt>
+      <trkpt lat="50.518314" lon="5.641742">
+        <ele>278.1</ele>
+        <name>Rue du Champay, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.518346" lon="5.641772">
+        <ele>278.0</ele>
+      </trkpt>
+      <trkpt lat="50.518532" lon="5.641913">
+        <ele>278.6</ele>
+      </trkpt>
+      <trkpt lat="50.518756" lon="5.642077">
+        <ele>279.9</ele>
+      </trkpt>
+      <trkpt lat="50.518981" lon="5.64224">
+        <ele>281.2</ele>
+      </trkpt>
+      <trkpt lat="50.519318" lon="5.642483">
+        <ele>281.5</ele>
+      </trkpt>
+      <trkpt lat="50.519564" lon="5.642654">
+        <ele>280.7</ele>
+      </trkpt>
+      <trkpt lat="50.5199" lon="5.642901">
+        <ele>281.8</ele>
+      </trkpt>
+      <trkpt lat="50.519964" lon="5.643031">
+        <ele>281.9</ele>
+      </trkpt>
+      <trkpt lat="50.520184" lon="5.64332">
+        <ele>283.8</ele>
+      </trkpt>
+      <trkpt lat="50.520321" lon="5.643523">
+        <ele>283.9</ele>
+      </trkpt>
+      <trkpt lat="50.520404" lon="5.643663">
+        <ele>283.7</ele>
+      </trkpt>
+      <trkpt lat="50.520458" lon="5.643773">
+        <ele>283.8</ele>
+      </trkpt>
+      <trkpt lat="50.520529" lon="5.643876">
+        <ele>284.0</ele>
+      </trkpt>
+      <trkpt lat="50.520758" lon="5.644192">
+        <ele>283.4</ele>
+      </trkpt>
+      <trkpt lat="50.520986" lon="5.644507">
+        <ele>283.1</ele>
+      </trkpt>
+      <trkpt lat="50.521071" lon="5.644802">
+        <ele>282.5</ele>
+      </trkpt>
+      <trkpt lat="50.521152" lon="5.64517">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="50.521182" lon="5.645363">
+        <ele>283.2</ele>
+      </trkpt>
+      <trkpt lat="50.52126" lon="5.645845">
+        <ele>284.3</ele>
+      </trkpt>
+      <trkpt lat="50.521287" lon="5.646521">
+        <ele>282.4</ele>
+      </trkpt>
+      <trkpt lat="50.521298" lon="5.646686">
+        <ele>281.4</ele>
+      </trkpt>
+      <trkpt lat="50.521364" lon="5.647241">
+        <ele>280.3</ele>
+      </trkpt>
+      <trkpt lat="50.521442" lon="5.647777">
+        <ele>280.6</ele>
+      </trkpt>
+      <trkpt lat="50.521514" lon="5.648271">
+        <ele>279.8</ele>
+      </trkpt>
+      <trkpt lat="50.521431" lon="5.64829">
+        <ele>280.7</ele>
+      </trkpt>
+      <trkpt lat="50.521292" lon="5.648307">
+        <ele>281.8</ele>
+      </trkpt>
+      <trkpt lat="50.521115" lon="5.648304">
+        <ele>282.9</ele>
+      </trkpt>
+      <trkpt lat="50.520877" lon="5.648246">
+        <ele>283.5</ele>
+      </trkpt>
+      <trkpt lat="50.52064" lon="5.648188">
+        <ele>284.5</ele>
+      </trkpt>
+      <trkpt lat="50.520636" lon="5.648186">
+        <ele>284.5</ele>
+        <name>Rue des Fosses, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.520537" lon="5.64815">
+        <ele>285.0</ele>
+      </trkpt>
+      <trkpt lat="50.520358" lon="5.648121">
+        <ele>285.7</ele>
+      </trkpt>
+      <trkpt lat="50.520131" lon="5.648095">
+        <ele>286.5</ele>
+      </trkpt>
+      <trkpt lat="50.519904" lon="5.648069">
+        <ele>287.4</ele>
+      </trkpt>
+      <trkpt lat="50.5198" lon="5.648054">
+        <ele>287.9</ele>
+      </trkpt>
+      <trkpt lat="50.519467" lon="5.648107">
+        <ele>287.2</ele>
+      </trkpt>
+      <trkpt lat="50.519135" lon="5.648161">
+        <ele>286.2</ele>
+      </trkpt>
+      <trkpt lat="50.518802" lon="5.648214">
+        <ele>285.0</ele>
+      </trkpt>
+      <trkpt lat="50.518502" lon="5.648286">
+        <ele>285.4</ele>
+      </trkpt>
+      <trkpt lat="50.518199" lon="5.648374">
+        <ele>285.1</ele>
+      </trkpt>
+      <trkpt lat="50.517971" lon="5.648415">
+        <ele>285.3</ele>
+      </trkpt>
+      <trkpt lat="50.517897" lon="5.648428">
+        <ele>285.4</ele>
+        <name>Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.517743" lon="5.648455">
+        <ele>285.6</ele>
+      </trkpt>
+      <trkpt lat="50.517519" lon="5.64849">
+        <ele>286.6</ele>
+      </trkpt>
+      <trkpt lat="50.517294" lon="5.648525">
+        <ele>286.2</ele>
+      </trkpt>
+      <trkpt lat="50.517135" lon="5.648535">
+        <ele>286.0</ele>
+      </trkpt>
+      <trkpt lat="50.51693" lon="5.648538">
+        <ele>286.1</ele>
+      </trkpt>
+      <trkpt lat="50.516894" lon="5.647897">
+        <ele>285.5</ele>
+      </trkpt>
+      <trkpt lat="50.516875" lon="5.647462">
+        <ele>284.1</ele>
+      </trkpt>
+      <trkpt lat="50.516856" lon="5.647027">
+        <ele>284.1</ele>
+      </trkpt>
+      <trkpt lat="50.516834" lon="5.646432">
+        <ele>282.1</ele>
+      </trkpt>
+      <trkpt lat="50.516813" lon="5.645837">
+        <ele>280.4</ele>
+      </trkpt>
+      <trkpt lat="50.516792" lon="5.645241">
+        <ele>278.9</ele>
+      </trkpt>
+      <trkpt lat="50.516786" lon="5.644767">
+        <ele>278.8</ele>
+        <name>Rue de Beauval, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.516783" lon="5.644608">
+        <ele>278.7</ele>
+      </trkpt>
+      <trkpt lat="50.516835" lon="5.644027">
+        <ele>275.1</ele>
+      </trkpt>
+      <trkpt lat="50.51685" lon="5.643749">
+        <ele>273.7</ele>
+      </trkpt>
+      <trkpt lat="50.516849" lon="5.64355">
+        <ele>273.1</ele>
+      </trkpt>
+      <trkpt lat="50.516828" lon="5.643362">
+        <ele>272.4</ele>
+      </trkpt>
+      <trkpt lat="50.516724" lon="5.642937">
+        <ele>271.6</ele>
+      </trkpt>
+      <trkpt lat="50.516657" lon="5.642483">
+        <ele>271.0</ele>
+      </trkpt>
+      <trkpt lat="50.51659" lon="5.642029">
+        <ele>273.6</ele>
+      </trkpt>
+      <trkpt lat="50.516585" lon="5.641408">
+        <ele>275.8</ele>
+      </trkpt>
+      <trkpt lat="50.516579" lon="5.640786">
+        <ele>277.9</ele>
+      </trkpt>
+      <trkpt lat="50.516574" lon="5.640165">
+        <ele>280.6</ele>
+      </trkpt>
+      <trkpt lat="50.516549" lon="5.639958">
+        <ele>281.1</ele>
+      </trkpt>
+      <trkpt lat="50.516493" lon="5.639604">
+        <ele>280.9</ele>
+      </trkpt>
+      <trkpt lat="50.516477" lon="5.639496">
+        <ele>281.1</ele>
+        <name>Rue d&apos;Ogné, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.516438" lon="5.63925">
+        <ele>281.6</ele>
+      </trkpt>
+      <trkpt lat="50.516426" lon="5.639179">
+        <ele>281.9</ele>
+      </trkpt>
+      <trkpt lat="50.51637" lon="5.638529">
+        <ele>282.4</ele>
+      </trkpt>
+      <trkpt lat="50.516313" lon="5.63788">
+        <ele>283.1</ele>
+      </trkpt>
+      <trkpt lat="50.516313" lon="5.637771">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="50.516324" lon="5.637677">
+        <ele>282.6</ele>
+      </trkpt>
+      <trkpt lat="50.51636" lon="5.637507">
+        <ele>282.2</ele>
+      </trkpt>
+      <trkpt lat="50.516409" lon="5.637403">
+        <ele>281.8</ele>
+      </trkpt>
+      <trkpt lat="50.516274" lon="5.637012">
+        <ele>282.7</ele>
+      </trkpt>
+      <trkpt lat="50.516126" lon="5.636591">
+        <ele>281.9</ele>
+      </trkpt>
+      <trkpt lat="50.515978" lon="5.636171">
+        <ele>281.7</ele>
+      </trkpt>
+      <trkpt lat="50.515833" lon="5.635756">
+        <ele>281.0</ele>
+      </trkpt>
+      <trkpt lat="50.51564" lon="5.635229">
+        <ele>280.8</ele>
+      </trkpt>
+      <trkpt lat="50.515493" lon="5.634874">
+        <ele>280.6</ele>
+      </trkpt>
+      <trkpt lat="50.515331" lon="5.63449">
+        <ele>281.0</ele>
+      </trkpt>
+      <trkpt lat="50.515135" lon="5.634023">
+        <ele>279.7</ele>
+      </trkpt>
+      <trkpt lat="50.514994" lon="5.633672">
+        <ele>278.2</ele>
+      </trkpt>
+      <trkpt lat="50.515025" lon="5.633577">
+        <ele>278.0</ele>
+      </trkpt>
+      <trkpt lat="50.515036" lon="5.63342">
+        <ele>277.3</ele>
+      </trkpt>
+      <trkpt lat="50.515046" lon="5.633155">
+        <ele>277.0</ele>
+      </trkpt>
+      <trkpt lat="50.515049" lon="5.633074">
+        <ele>277.0</ele>
+      </trkpt>
+      <trkpt lat="50.515061" lon="5.632668">
+        <ele>278.2</ele>
+      </trkpt>
+      <trkpt lat="50.515064" lon="5.632453">
+        <ele>278.4</ele>
+      </trkpt>
+      <trkpt lat="50.515062" lon="5.632217">
+        <ele>279.1</ele>
+      </trkpt>
+      <trkpt lat="50.515057" lon="5.632031">
+        <ele>279.8</ele>
+      </trkpt>
+      <trkpt lat="50.515043" lon="5.631851">
+        <ele>280.1</ele>
+      </trkpt>
+      <trkpt lat="50.515018" lon="5.631681">
+        <ele>280.0</ele>
+      </trkpt>
+      <trkpt lat="50.514965" lon="5.631462">
+        <ele>279.9</ele>
+      </trkpt>
+      <trkpt lat="50.514815" lon="5.630967">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.514774" lon="5.630815">
+        <ele>279.0</ele>
+        <name>Sprimont</name>
+        <extensions>
+          <oa:mapZoom>17</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.514696" lon="5.63053">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.514618" lon="5.630195">
+        <ele>279.3</ele>
+      </trkpt>
+      <trkpt lat="50.51455" lon="5.629904">
+        <ele>279.6</ele>
+      </trkpt>
+      <trkpt lat="50.514454" lon="5.629611">
+        <ele>279.6</ele>
+      </trkpt>
+      <trkpt lat="50.514441" lon="5.629527">
+        <ele>279.3</ele>
+      </trkpt>
+      <trkpt lat="50.514429" lon="5.629284">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.514437" lon="5.629221">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.514442" lon="5.629144">
+        <ele>279.0</ele>
+      </trkpt>
+      <trkpt lat="50.514675" lon="5.629174">
+        <ele>278.0</ele>
+      </trkpt>
+      <trkpt lat="50.514908" lon="5.629203">
+        <ele>279.2</ele>
+      </trkpt>
+      <trkpt lat="50.515342" lon="5.629255">
+        <ele>282.1</ele>
+      </trkpt>
+      <trkpt lat="50.515776" lon="5.629308">
+        <ele>281.9</ele>
+      </trkpt>
+      <trkpt lat="50.515882" lon="5.629325">
+        <ele>282.0</ele>
+      </trkpt>
+      <trkpt lat="50.51589" lon="5.629281">
+        <ele>282.0</ele>
+      </trkpt>
+      <trkpt lat="50.515905" lon="5.629248">
+        <ele>282.0</ele>
+      </trkpt>
+      <trkpt lat="50.515923" lon="5.629229">
+        <ele>282.0</ele>
+      </trkpt>
+      <trkpt lat="50.515947" lon="5.629217">
+        <ele>282.0</ele>
+      </trkpt>
+      <trkpt lat="50.515971" lon="5.629219">
+        <ele>282.0</ele>
+      </trkpt>
+      <trkpt lat="50.515994" lon="5.629233">
+        <ele>282.1</ele>
+      </trkpt>
+      <trkpt lat="50.516017" lon="5.629045">
+        <ele>282.3</ele>
+      </trkpt>
+      <trkpt lat="50.515927" lon="5.628492">
+        <ele>283.6</ele>
+      </trkpt>
+      <trkpt lat="50.515836" lon="5.627938">
+        <ele>284.4</ele>
+      </trkpt>
+      <trkpt lat="50.515746" lon="5.627385">
+        <ele>284.7</ele>
+      </trkpt>
+      <trkpt lat="50.515681" lon="5.626948">
+        <ele>285.0</ele>
+        <name>Rue Del Pèce, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>16</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.515654" lon="5.626764">
+        <ele>285.0</ele>
+      </trkpt>
+      <trkpt lat="50.515562" lon="5.626143">
+        <ele>286.0</ele>
+      </trkpt>
+      <trkpt lat="50.51543" lon="5.625523">
+        <ele>284.0</ele>
+      </trkpt>
+      <trkpt lat="50.515298" lon="5.624902">
+        <ele>282.7</ele>
+      </trkpt>
+      <trkpt lat="50.515166" lon="5.624282">
+        <ele>282.4</ele>
+      </trkpt>
+      <trkpt lat="50.515034" lon="5.623662">
+        <ele>282.9</ele>
+      </trkpt>
+      <trkpt lat="50.514942" lon="5.62323">
+        <ele>282.3</ele>
+      </trkpt>
+      <trkpt lat="50.514851" lon="5.622799">
+        <ele>282.1</ele>
+      </trkpt>
+      <trkpt lat="50.514659" lon="5.622998">
+        <ele>282.9</ele>
+      </trkpt>
+      <trkpt lat="50.51441" lon="5.623114">
+        <ele>283.1</ele>
+      </trkpt>
+      <trkpt lat="50.51416" lon="5.623229">
+        <ele>281.6</ele>
+      </trkpt>
+      <trkpt lat="50.514056" lon="5.623272">
+        <ele>280.6</ele>
+        <name>Sprimont</name>
+        <extensions>
+          <oa:mapZoom>16</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.513944" lon="5.623318">
+        <ele>279.5</ele>
+      </trkpt>
+      <trkpt lat="50.513507" lon="5.623447">
+        <ele>276.8</ele>
+      </trkpt>
+      <trkpt lat="50.51307" lon="5.623577">
+        <ele>276.0</ele>
+      </trkpt>
+      <trkpt lat="50.512939" lon="5.623684">
+        <ele>276.4</ele>
+      </trkpt>
+      <trkpt lat="50.512878" lon="5.623734">
+        <ele>276.6</ele>
+      </trkpt>
+      <trkpt lat="50.512799" lon="5.623799">
+        <ele>276.3</ele>
+      </trkpt>
+      <trkpt lat="50.51272" lon="5.623919">
+        <ele>275.7</ele>
+      </trkpt>
+      <trkpt lat="50.512583" lon="5.624237">
+        <ele>274.7</ele>
+      </trkpt>
+      <trkpt lat="50.512446" lon="5.624555">
+        <ele>273.0</ele>
+      </trkpt>
+      <trkpt lat="50.512522" lon="5.625242">
+        <ele>271.3</ele>
+      </trkpt>
+      <trkpt lat="50.512598" lon="5.625928">
+        <ele>272.3</ele>
+      </trkpt>
+      <trkpt lat="50.512629" lon="5.626131">
+        <ele>273.5</ele>
+      </trkpt>
+      <trkpt lat="50.512473" lon="5.626222">
+        <ele>272.1</ele>
+      </trkpt>
+      <trkpt lat="50.512411" lon="5.626259">
+        <ele>271.6</ele>
+      </trkpt>
+      <trkpt lat="50.512229" lon="5.626378">
+        <ele>270.1</ele>
+      </trkpt>
+      <trkpt lat="50.511967" lon="5.626647">
+        <ele>267.2</ele>
+      </trkpt>
+      <trkpt lat="50.511774" lon="5.626902">
+        <ele>265.7</ele>
+      </trkpt>
+      <trkpt lat="50.511752" lon="5.626931">
+        <ele>265.6</ele>
+        <name>Rue Robespierre, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>16</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.511582" lon="5.627156">
+        <ele>264.9</ele>
+      </trkpt>
+      <trkpt lat="50.511453" lon="5.627435">
+        <ele>265.1</ele>
+      </trkpt>
+      <trkpt lat="50.511381" lon="5.627645">
+        <ele>264.6</ele>
+      </trkpt>
+      <trkpt lat="50.511313" lon="5.627918">
+        <ele>262.8</ele>
+      </trkpt>
+      <trkpt lat="50.511281" lon="5.628176">
+        <ele>260.6</ele>
+      </trkpt>
+      <trkpt lat="50.511515" lon="5.628201">
+        <ele>262.3</ele>
+      </trkpt>
+      <trkpt lat="50.511748" lon="5.628224">
+        <ele>264.6</ele>
+      </trkpt>
+      <trkpt lat="50.512107" lon="5.628288">
+        <ele>266.3</ele>
+      </trkpt>
+      <trkpt lat="50.512235" lon="5.628362">
+        <ele>267.0</ele>
+      </trkpt>
+      <trkpt lat="50.512305" lon="5.628446">
+        <ele>267.2</ele>
+      </trkpt>
+      <trkpt lat="50.512366" lon="5.628621">
+        <ele>267.1</ele>
+      </trkpt>
+      <trkpt lat="50.512396" lon="5.628706">
+        <ele>267.0</ele>
+        <name>Rue Robespierre, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>18</oa:mapZoom>
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.51246" lon="5.628884">
+        <ele>266.8</ele>
+      </trkpt>
+      <trkpt lat="50.51263" lon="5.628984">
+        <ele>267.2</ele>
+      </trkpt>
+      <trkpt lat="50.512884" lon="5.628982">
+        <ele>267.7</ele>
+      </trkpt>
+      <trkpt lat="50.512666" lon="5.629124">
+        <ele>266.8</ele>
+      </trkpt>
+      <trkpt lat="50.512424" lon="5.629315">
+        <ele>265.5</ele>
+      </trkpt>
+      <trkpt lat="50.512577" lon="5.629503">
+        <ele>266.4</ele>
+        <name>Rue de l&apos;Enseignement, Sprimont</name>
+        <extensions>
+          <oa:mapZoom>18</oa:mapZoom>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
