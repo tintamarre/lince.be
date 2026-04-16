@@ -14,17 +14,17 @@
   --color-village-900: #0f172a;
   --color-village-950: #020617;
 
-  /* Subtle teal accent — refined pop against cool grays */
-  --color-accent-50: #f0fdfa;
-  --color-accent-100: #ccfbf1;
-  --color-accent-200: #99f6e4;
-  --color-accent-300: #5eead4;
-  --color-accent-400: #2dd4bf;
-  --color-accent-500: #14b8a6;
-  --color-accent-600: #0d9488;
-  --color-accent-700: #0f766e;
-  --color-accent-800: #115e59;
-  --color-accent-900: #134e4a;
+  /* Blue-gray accent — stronger contrast while staying understated */
+  --color-accent-50: #ebedf1;
+  --color-accent-100: #d6dbe4;
+  --color-accent-200: #aeb7c9;
+  --color-accent-300: #8594ad;
+  --color-accent-400: #5d7092;
+  --color-accent-500: #344c77;
+  --color-accent-600: #2a3d5f;
+  --color-accent-700: #1f2e47;
+  --color-accent-800: #151e30;
+  --color-accent-900: #0a0f18;
 
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
