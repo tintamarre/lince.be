@@ -29,18 +29,22 @@ Tournoi et moment convivial autour de la pétanque à Lincé.
 - **Catégorie:** marché
 - **Lieu:** Centre du village
 
-10 ème édition de la brocante du village de Lincé. Petite restauration et buvette sur place.
+10 ème édition de la brocante du village de Lincé. Petite restauration sur place.
 
 ## 2026-06-27 | Fancy Fair de l'école de Lincé
 - **Catégorie:** fête
 - **Lieu:** École communale de Lincé
 
-Fancy fair de l'école de Lincé.
+Fancy fair de l'École de Lincé.
 
 ## 2026-09-27 | Marche ADEPS
 - **Lieu:** École communale de Lincé-Sprimont, rue de l'Enseignement 5
 - **Catégorie:** sport
-Marche ADEPS au village de Lincé, organisée par le comité scolaire de Lincé. Parcours de 5, 10, 15 et 20 km. Accessible aux poussettes. Contact : Fabio Piccoli — 0496 075 069. Accès TEC ligne 65 : Liège-Aywaille-Remouchamps, arrêt Lincé-Église.
+Marche ADEPS au village de Lincé, organisée par le comité scolaire de Lincé. 
+Parcours de 5, 10, 15 et 20 km. 
+Accessible aux poussettes. 
+Contact : Fabio Piccoli — 0496 075 069. 
+Accès TEC ligne 65 : Liège-Aywaille-Remouchamps, arrêt Lincé-Église.
 
 ## 2026-10-31 | Fête d'Halloween
 - **Catégorie:** fête
@@ -48,8 +52,12 @@ Marche ADEPS au village de Lincé, organisée par le comité scolaire de Lincé.
 
 Animation Halloween à Lincé.
 
-## 2026-11-14 | Gauloiseries
-- **Date fin:** 2026-11-15
-- **Catégorie:** culture
+## 2026-11-14 | Gauloiseries Jour 1
+- **Catégorie:** fête
+
+Gauloiseries les 14 et 15 novembre 2026.
+
+## 2026-11-15 | Gauloiseries Jour 2
+- **Catégorie:** fête
 
 Gauloiseries les 14 et 15 novembre 2026.
