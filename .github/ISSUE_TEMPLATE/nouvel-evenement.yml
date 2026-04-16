@@ -31,7 +31,6 @@ body:
     attributes:
       label: Horaire
       description: "Heure de début et de fin (laisser vide si toute la journée)"
-      placeholder: ""
 
   - type: input
     id: lieu
