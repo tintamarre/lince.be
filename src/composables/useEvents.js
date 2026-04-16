@@ -35,6 +35,23 @@ function categoryColor(category) {
   return CATEGORY_COLORS[category?.toLowerCase()] || DEFAULT_COLOR
 }
 
+function formatRelativeDiff(dateStr) {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const [y, m, d] = dateStr.split('-').map(Number)
+  const eventDate = new Date(y, m - 1, d)
+  const diffDays = Math.round((eventDate - today) / 86400000)
+
+  if (diffDays < 0) return null
+  if (diffDays === 0) return "aujourd'hui"
+  if (diffDays === 1) return 'demain'
+  if (diffDays < 7) return `dans ${diffDays} jours`
+  if (diffDays < 14) return 'dans 1 semaine'
+  if (diffDays < 30) return `dans ${Math.floor(diffDays / 7)} semaines`
+  if (diffDays < 60) return 'dans 1 mois'
+  return `dans ${Math.floor(diffDays / 30)} mois`
+}
+
 export function useEvents() {
   const allEvents = computed(() =>
     [...events].sort((a, b) => a.startDate.localeCompare(b.startDate))
@@ -78,5 +95,6 @@ export function useEvents() {
     formatDay,
     formatMonthYear,
     categoryColor,
+    formatRelativeDiff,
   }
 }

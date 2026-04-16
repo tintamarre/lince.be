@@ -1,4 +1,6 @@
 <script setup>
+import { ref, computed, onMounted, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 import { useEvents } from '../composables/useEvents.js'
 
 const props = defineProps({
@@ -6,7 +8,7 @@ const props = defineProps({
   compact: { type: Boolean, default: false },
 })
 
-const { formatDate, formatDay, categoryColor } = useEvents()
+const { formatDate, formatDay, categoryColor, formatRelativeDiff } = useEvents()
 const colors = categoryColor(props.event.category)
 
 const typeIcons = {
@@ -15,16 +17,54 @@ const typeIcons = {
   document: '📄',
   link: '🔗',
 }
+
+const route = useRoute()
+const isHighlighted = computed(() => route.query.event === props.event.id)
+
+const expanded = ref(isHighlighted.value)
+const copied = ref(false)
+const cardEl = ref(null)
+
+const relativeDiff = computed(() => formatRelativeDiff(props.event.startDate))
+
+function toggleExpand() {
+  expanded.value = !expanded.value
+}
+
+function copyLink() {
+  const url = `${window.location.origin}${window.location.pathname}#/agenda?event=${props.event.id}`
+  navigator.clipboard.writeText(url).then(() => {
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2000)
+  })
+}
+
+onMounted(async () => {
+  if (isHighlighted.value && cardEl.value) {
+    await nextTick()
+    cardEl.value.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+})
 </script>
 
 <template>
-  <article class="flex gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
+  <article
+    ref="cardEl"
+    class="flex gap-4 p-4 rounded-lg transition-colors"
+    :class="isHighlighted ? 'bg-village-50 ring-1 ring-village-300' : 'hover:bg-gray-50'"
+  >
     <!-- Date badge -->
-    <div class="flex-shrink-0 w-14 h-14 rounded-lg bg-village-50 border border-village-200 flex flex-col items-center justify-center">
-      <span class="text-lg font-bold text-village-800 leading-none">{{ formatDay(event.startDate) }}</span>
-      <span class="text-[10px] uppercase text-village-600 leading-tight mt-0.5">
-        {{ event.startDate.split('-')[1] }}/{{ event.startDate.split('-')[0].slice(2) }}
-      </span>
+    <div class="flex-shrink-0 flex flex-col items-center gap-1">
+      <div class="w-14 h-14 rounded-lg bg-village-50 border border-village-200 flex flex-col items-center justify-center">
+        <span class="text-lg font-bold text-village-800 leading-none">{{ formatDay(event.startDate) }}</span>
+        <span class="text-[10px] uppercase text-village-600 leading-tight mt-0.5">
+          {{ event.startDate.split('-')[1] }}/{{ event.startDate.split('-')[0].slice(2) }}
+        </span>
+      </div>
+      <span
+        v-if="relativeDiff"
+        class="text-[10px] text-center leading-tight text-village-600 font-medium w-14"
+      >{{ relativeDiff }}</span>
     </div>
 
     <!-- Content -->
@@ -49,9 +89,17 @@ const typeIcons = {
         </p>
       </div>
 
-      <p v-if="!compact && event.description" class="mt-2 text-sm text-gray-600 line-clamp-2">
-        {{ event.description }}
-      </p>
+      <template v-if="!compact && event.description">
+        <p class="mt-2 text-sm text-gray-600" :class="{ 'line-clamp-2': !expanded }">
+          {{ event.description }}
+        </p>
+        <button
+          class="mt-1 text-xs text-village-600 hover:text-village-800 font-medium transition-colors"
+          @click="toggleExpand"
+        >
+          {{ expanded ? 'Réduire ▲' : 'Lire la suite ▼' }}
+        </button>
+      </template>
 
       <!-- Attachments -->
       <div v-if="!compact && event.attachments?.length" class="mt-2 flex flex-wrap gap-2">
@@ -66,6 +114,20 @@ const typeIcons = {
           <span>{{ typeIcons[att.type] || '🔗' }}</span>
           {{ att.label }}
         </a>
+      </div>
+
+      <!-- Share link -->
+      <div v-if="!compact" class="mt-2">
+        <button
+          class="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+          @click="copyLink"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+          {{ copied ? 'Lien copié ✓' : 'Copier le lien' }}
+        </button>
       </div>
     </div>
   </article>
