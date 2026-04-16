@@ -12,10 +12,10 @@ const nextEvents = upcomingEvents.value.slice(0, 3)
     <section class="py-16 sm:py-24">
       <div class="max-w-4xl mx-auto px-5 sm:px-8">
         <h1 class="font-display text-4xl sm:text-5xl font-semibold text-village-950 tracking-tight leading-tight">
-          Lincé
+          Lincé, Sprimont
         </h1>
         <p class="mt-2 text-lg text-village-500 font-light">
-          Village de Wallonie
+          Village de Wallonie, en Province de Liège.
         </p>
         <div class="mt-6">
           <router-link
