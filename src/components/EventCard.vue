@@ -19,7 +19,7 @@ const typeIcons = {
 }
 
 const route = useRoute()
-const isHighlighted = computed(() => route.query.event === props.event.id)
+const isHighlighted = computed(() => route.query.date === props.event.startDate)
 
 const expanded = ref(isHighlighted.value)
 const copied = ref(false)
@@ -32,7 +32,7 @@ function toggleExpand() {
 }
 
 function copyLink() {
-  const url = `${window.location.origin}${window.location.pathname}#/agenda?event=${props.event.id}`
+  const url = `${window.location.origin}${window.location.pathname}#/agenda?date=${props.event.startDate}`
   navigator.clipboard.writeText(url).then(() => {
     copied.value = true
     setTimeout(() => { copied.value = false }, 2000)
