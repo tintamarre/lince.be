@@ -121,7 +121,7 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
         :class="{
           'bg-village-50/50 text-village-300': cell.outside,
           'bg-village-50 text-village-800 hover:bg-village-100': !cell.outside && !hasEvents(cell.date),
-          'bg-accent-50 text-accent-800 font-semibold hover:bg-accent-100': !cell.outside && hasEvents(cell.date),
+          'bg-accent-200 text-accent-900 font-semibold hover:bg-accent-300': !cell.outside && hasEvents(cell.date),
           'ring-2 ring-accent-400 ring-inset': selectedDate === cell.date,
         }"
         @click="!cell.outside && selectDate(cell.date)"
