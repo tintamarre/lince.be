@@ -31,13 +31,12 @@ body:
     attributes:
       label: Horaire
       description: "Heure de début et de fin (laisser vide si toute la journée)"
-      placeholder: "08:00 - 18:00"
 
   - type: input
     id: lieu
     attributes:
       label: Lieu
-      placeholder: "Place de Lincé"
+      placeholder: "Rue de l'Enseignement 5, 4140 Sprimont"
     validations:
       required: true
 
@@ -50,7 +49,6 @@ body:
         - marché
         - sport
         - culture
-        - réunion
         - autre
 
   - type: textarea
