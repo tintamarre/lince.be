@@ -9,21 +9,20 @@ const view = ref('list')
 </script>
 
 <template>
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-    <!-- Header + view toggle -->
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 py-10">
     <div class="flex items-center justify-between mb-8">
-      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Agenda</h1>
-      <div class="flex bg-gray-100 rounded-lg p-1">
+      <h1 class="font-display text-2xl sm:text-3xl font-semibold text-village-900">Agenda</h1>
+      <div class="flex bg-village-100 rounded-lg p-0.5">
         <button
-          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors"
-          :class="view === 'list' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'"
+          class="px-3 py-1.5 text-xs font-medium rounded-md transition-colors"
+          :class="view === 'list' ? 'bg-white text-village-900 shadow-sm' : 'text-village-500 hover:text-village-700'"
           @click="view = 'list'"
         >
           Liste
         </button>
         <button
-          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors"
-          :class="view === 'calendar' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'"
+          class="px-3 py-1.5 text-xs font-medium rounded-md transition-colors"
+          :class="view === 'calendar' ? 'bg-white text-village-900 shadow-sm' : 'text-village-500 hover:text-village-700'"
           @click="view = 'calendar'"
         >
           Calendrier
@@ -31,12 +30,11 @@ const view = ref('list')
       </div>
     </div>
 
-    <!-- Views -->
     <EventList v-if="view === 'list'" />
     <EventCalendar v-else />
 
-    <!-- Propose + Subscribe sections -->
-    <div class="mt-16 space-y-6">
+    <!-- Bottom actions — compact row -->
+    <div class="mt-16 pt-8 border-t border-village-200 flex flex-col sm:flex-row gap-6">
       <ProposeEvent />
       <CalendarSubscribe />
     </div>

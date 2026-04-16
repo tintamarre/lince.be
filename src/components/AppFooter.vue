@@ -1,7 +1,7 @@
 <template>
-  <footer class="border-t border-gray-200 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 text-center text-sm text-gray-500">
-      <p>&copy; {{ new Date().getFullYear() }} Lincé.be &mdash; Un village de Wallonie</p>
+  <footer class="border-t border-village-200">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 py-6 text-center text-xs text-village-400">
+      &copy; {{ new Date().getFullYear() }} Lincé
     </div>
   </footer>
 </template>

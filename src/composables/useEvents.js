@@ -7,14 +7,15 @@ const MONTHS_FR = [
 ]
 
 const CATEGORY_COLORS = {
-  sport: { bg: 'bg-blue-100', text: 'text-blue-800' },
-  marché: { bg: 'bg-amber-100', text: 'text-amber-800' },
-  fête: { bg: 'bg-pink-100', text: 'text-pink-800' },
-  culture: { bg: 'bg-purple-100', text: 'text-purple-800' },
-  réunion: { bg: 'bg-gray-100', text: 'text-gray-800' },
+  sport: { bg: 'bg-sky-50', text: 'text-sky-700' },
+  marché: { bg: 'bg-amber-50', text: 'text-amber-700' },
+  fête: { bg: 'bg-rose-50', text: 'text-rose-700' },
+  culture: { bg: 'bg-violet-50', text: 'text-violet-700' },
+  réunion: { bg: 'bg-village-100', text: 'text-village-700' },
+  'vie locale': { bg: 'bg-emerald-50', text: 'text-emerald-700' },
 }
 
-const DEFAULT_COLOR = { bg: 'bg-village-100', text: 'text-village-800' }
+const DEFAULT_COLOR = { bg: 'bg-village-100', text: 'text-village-600' }
 
 function formatDate(dateStr) {
   const [y, m, d] = dateStr.split('-').map(Number)

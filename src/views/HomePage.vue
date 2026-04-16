@@ -2,31 +2,27 @@
 import { useEvents } from '../composables/useEvents.js'
 import EventCard from '../components/EventCard.vue'
 
-const { upcomingEvents, formatDate } = useEvents()
+const { upcomingEvents } = useEvents()
 const nextEvents = upcomingEvents.value.slice(0, 3)
 </script>
 
 <template>
   <div>
-    <!-- Hero -->
-    <section class="bg-gradient-to-b from-village-50 to-white py-20 sm:py-28">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <h1 class="text-4xl sm:text-5xl font-bold text-village-900 tracking-tight">
+    <!-- Hero — minimal, typographic -->
+    <section class="py-16 sm:py-24">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8">
+        <h1 class="font-display text-4xl sm:text-5xl font-semibold text-village-950 tracking-tight leading-tight">
           Lincé
         </h1>
-        <p class="mt-4 text-lg sm:text-xl text-village-700">
-          Un village de Wallonie
+        <p class="mt-2 text-lg text-village-500 font-light">
+          Village de Wallonie
         </p>
-        <p class="mt-3 text-gray-500 max-w-lg mx-auto">
-          Bienvenue sur le site du village de Lincé. Retrouvez ici l'agenda des événements
-          et activités de notre village.
-        </p>
-        <div class="mt-8">
+        <div class="mt-6">
           <router-link
             to="/agenda"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-village-700 text-white font-medium rounded-lg hover:bg-village-800 transition-colors"
+            class="inline-flex items-center gap-2 text-sm font-medium text-accent-600 hover:text-accent-700 transition-colors"
           >
-            Voir l'agenda
+            Consulter l'agenda
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -35,19 +31,50 @@ const nextEvents = upcomingEvents.value.slice(0, 3)
       </div>
     </section>
 
-    <!-- Upcoming events preview -->
-    <section v-if="nextEvents.length > 0" class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8">Prochains événements</h2>
-      <div class="divide-y divide-gray-100">
-        <EventCard v-for="event in nextEvents" :key="event.id" :event="event" />
-      </div>
-      <div class="mt-8 text-center">
+    <!-- Upcoming events -->
+    <section v-if="nextEvents.length > 0" class="max-w-4xl mx-auto px-5 sm:px-8 pb-20">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-display text-xl font-semibold text-village-900">Prochains événements</h2>
         <router-link
           to="/agenda"
-          class="text-sm font-medium text-village-700 hover:text-village-800 transition-colors"
+          class="text-xs text-village-500 hover:text-village-700 transition-colors"
         >
-          Voir tous les événements &rarr;
+          Tout voir
         </router-link>
+      </div>
+      <div class="divide-y divide-village-200/60">
+        <EventCard v-for="event in nextEvents" :key="event.id" :event="event" />
+      </div>
+    </section>
+
+    <!-- Initiatives du village -->
+    <section class="max-w-4xl mx-auto px-5 sm:px-8 pb-20">
+      <h2 class="font-display text-xl font-semibold text-village-900 mb-6">Initiatives du village</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a
+          href="https://coteauxdelince.be/"
+          target="_blank"
+          rel="noopener"
+          class="group flex items-center gap-4 p-5 rounded-xl border border-village-200 hover:border-village-300 hover:bg-white transition-colors"
+        >
+          <span class="text-3xl">🍇</span>
+          <div>
+            <span class="font-semibold text-village-900 group-hover:text-accent-700 transition-colors">Les Coteaux de Lincé</span>
+            <p class="text-sm text-village-500 mt-0.5">Vin de Lincé</p>
+          </div>
+        </a>
+        <a
+          href="https://lincette.be/"
+          target="_blank"
+          rel="noopener"
+          class="group flex items-center gap-4 p-5 rounded-xl border border-village-200 hover:border-village-300 hover:bg-white transition-colors"
+        >
+          <span class="text-3xl">🍺</span>
+          <div>
+            <span class="font-semibold text-village-900 group-hover:text-accent-700 transition-colors">La Lincette</span>
+            <p class="text-sm text-village-500 mt-0.5">Bière de Lincé</p>
+          </div>
+        </a>
       </div>
     </section>
   </div>
