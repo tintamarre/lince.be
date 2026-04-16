@@ -26,13 +26,15 @@ const copied = ref(false)
 const cardEl = ref(null)
 
 const relativeDiff = computed(() => formatRelativeDiff(props.event.startDate))
+const descEl = ref(null)
+const isClamped = ref(false)
 
 function toggleExpand() {
   expanded.value = !expanded.value
 }
 
 function copyLink() {
-  const url = `${window.location.origin}${window.location.pathname}#/agenda?date=${props.event.startDate}`
+  const url = `${window.location.origin}${window.location.pathname}#/agenda?date=${props.event.startDate}#date-${props.event.startDate}`
   navigator.clipboard.writeText(url).then(() => {
     copied.value = true
     setTimeout(() => { copied.value = false }, 2000)
@@ -40,8 +42,11 @@ function copyLink() {
 }
 
 onMounted(async () => {
+  await nextTick()
+  if (descEl.value) {
+    isClamped.value = descEl.value.scrollHeight > descEl.value.clientHeight
+  }
   if (isHighlighted.value && cardEl.value) {
-    await nextTick()
     cardEl.value.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 })
@@ -49,6 +54,7 @@ onMounted(async () => {
 
 <template>
   <article
+    :id="`date-${event.startDate}`"
     ref="cardEl"
     class="flex gap-4 p-4 rounded-lg transition-colors"
     :class="isHighlighted ? 'bg-village-50 ring-1 ring-village-300' : 'hover:bg-gray-50'"
@@ -90,10 +96,11 @@ onMounted(async () => {
       </div>
 
       <template v-if="!compact && event.description">
-        <p class="mt-2 text-sm text-gray-600" :class="{ 'line-clamp-2': !expanded }">
+        <p ref="descEl" class="mt-2 text-sm text-gray-600" :class="{ 'line-clamp-2': !expanded }">
           {{ event.description }}
         </p>
         <button
+          v-if="isClamped || expanded"
           class="mt-1 text-xs text-village-600 hover:text-village-800 font-medium transition-colors"
           @click="toggleExpand"
         >
