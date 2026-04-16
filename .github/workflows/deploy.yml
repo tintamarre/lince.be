@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Generate ICS calendar
+        run: node scripts/generate-ics.js
+
       - name: Build
         run: pnpm run build
 
