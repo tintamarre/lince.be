@@ -1,26 +1,30 @@
-# node modules
+# Dependencies
 node_modules
 
-# MacOS desktop services store
+# Build output
+dist
+
+# Generated files
+public/calendar.ics
+
+# OS
 .DS_Store
-
-# Log files
-*.log
-
-# Meta files
-TODOs.md
+Thumbs.db
 
 # Editors
 .vscode
 .idea
+*.swp
+*.swo
 
-# VuePress temp directory
-.temp
+# Logs
+*.log
 
-# Docs dist directory
-/vuepress
+# Docker
+.docker
 
-# Typescript build dist
-packages/@vuepress/shared-utils/lib/
-packages/@vuepress/shared-utils/types/
-docs/.vuepress/dist/
+# Env
+.env
+.env.*
+
+.pnpm-store/

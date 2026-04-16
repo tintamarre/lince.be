@@ -1,0 +1,72 @@
+name: "Proposer un événement"
+description: "Proposer un nouvel événement pour l'agenda de Lincé"
+title: "[Événement] "
+labels: ["événement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer un événement pour l'agenda de Lincé !
+        Remplissez les informations ci-dessous et nous l'ajouterons au site.
+
+  - type: input
+    id: title
+    attributes:
+      label: Nom de l'événement
+      placeholder: "ex: Brocante du village"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: Format AAAA-MM-JJ
+      placeholder: "2026-05-01"
+    validations:
+      required: true
+
+  - type: input
+    id: horaire
+    attributes:
+      label: Horaire
+      description: "Heure de début et de fin (laisser vide si toute la journée)"
+      placeholder: "08:00 - 18:00"
+
+  - type: input
+    id: lieu
+    attributes:
+      label: Lieu
+      placeholder: "Place de Lincé"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: categorie
+    attributes:
+      label: Catégorie
+      options:
+        - fête
+        - marché
+        - sport
+        - culture
+        - réunion
+        - autre
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Décrivez l'événement en quelques lignes"
+      placeholder: "Grande brocante annuelle. Stands et restauration sur place."
+    validations:
+      required: true
+
+  - type: textarea
+    id: documents
+    attributes:
+      label: Documents ou liens
+      description: "Ajoutez ici des liens vers des affiches, parcours GPX, sites web, etc."
+      placeholder: |
+        - Affiche : https://example.com/affiche.jpg
+        - Site web : https://example.com
