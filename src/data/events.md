@@ -35,11 +35,12 @@ Tournoi et moment convivial autour de la pétanque à Lincé.
 - **Catégorie:** fête
 - **Lieu:** École communale de Lincé, rue de l'Enseignement 5, 4140 Lincé
 
-Fancy fair de l'École de Lincé.
+Fancy Fair de l'École de Lincé.
 
 ## 2026-09-27 | Marche ADEPS
 - **Lieu:** École communale de Lincé-Sprimont, rue de l'Enseignement 5, 4140 Lincé
 - **Catégorie:** sport
+
 Marche ADEPS au village de Lincé, organisée par le comité scolaire de Lincé. 
 Parcours de 5, 10, 15 et 20 km. 
 Accessible aux poussettes. 
@@ -50,16 +51,15 @@ Accès TEC ligne 65 : Liège-Aywaille-Remouchamps, arrêt Lincé-Église.
 - **Catégorie:** fête
 - **Lieu:** 50°30'50.7"N 5°37'41.8"E
 
-Animation Halloween à Lincé.
+Soirée Halloween au village de Lincé.
 
-## 2026-11-14 | Gauloiseries Jour 1
+## 2026-11-14 | Gauloiseries (Jour 1)
 - **Catégorie:** fête
 - **Lieu:** 50°30'50.7"N 5°37'41.8"E
 
-
 Gauloiseries les 14 et 15 novembre 2026.
 
-## 2026-11-15 | Gauloiseries Jour 2
+## 2026-11-15 | Gauloiseries (Jour 2)
 - **Catégorie:** fête
 - **Lieu:** 50°30'50.7"N 5°37'41.8"E
 
