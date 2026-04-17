@@ -42,6 +42,20 @@ Tournoi et moment convivial autour de la pétanque à Lincé.
 
 Fancy Fair de l'École de Lincé.
 
+## 2026-08-14 | Fêtes du 15 août à Liège
+- **Catégorie:** fête
+- **Lieu:** Place Delcour, Liège, Belgique
+
+Bar du 15 août à Liège sur la place Delcour face à la scène tenu par le Comité scolaire de Lincé au profit des activités récréatives des 5ème et 6ème années de l'école de Lincé.
+
+
+## 2026-08-15 | Fêtes du 15 août à Liège
+- **Catégorie:** fête
+- **Lieu:** Place Delcour, Liège, Belgique
+
+Bar du 15 août à Liège sur la place Delcour face à la scène tenu par le Comité scolaire de Lincé au profit des activités récréatives des 5ème et 6ème années de l'école de Lincé.
+
+
 ## 2026-09-27 | Marche ADEPS de Lincé
 - **Lieu:** École communale de Lincé-Sprimont, rue de l'Enseignement 5, 4140 Lincé
 - **Catégorie:** sport
