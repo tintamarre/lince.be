@@ -9,6 +9,19 @@ const rootDir = resolve(__dirname, '..')
 const content = readFileSync(resolve(rootDir, 'src/data/events.md'), 'utf-8')
 const events = parseEventsMd(content)
 const now = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
+const siteUrl = 'https://lince.be'
+
+function escapeIcsText(value) {
+  return value
+    .replace(/\\/g, '\\\\')
+    .replace(/\r?\n/g, '\\n')
+    .replace(/;/g, '\\;')
+    .replace(/,/g, '\\,')
+}
+
+function buildEventUrl(event) {
+  return `${siteUrl}/#/agenda?date=${event.startDate}#date-${event.startDate}`
+}
 
 let ics = [
   'BEGIN:VCALENDAR',
@@ -21,10 +34,15 @@ let ics = [
 ]
 
 for (const event of events) {
+  const eventUrl = buildEventUrl(event)
+  const description = event.description
+    ? `${event.description}\n\nLien : ${eventUrl}`
+    : `Lien : ${eventUrl}`
+
   ics.push('BEGIN:VEVENT')
   ics.push(`UID:${event.id}@lince.be`)
   ics.push(`DTSTAMP:${now}`)
-  ics.push(`SUMMARY:${event.title}`)
+  ics.push(`SUMMARY:${escapeIcsText(event.title)}`)
 
   if (event.startTime) {
     const dtStart = event.startDate.replace(/-/g, '') + 'T' + event.startTime.replace(':', '') + '00'
@@ -40,8 +58,9 @@ for (const event of events) {
     }
   }
 
-  if (event.location) ics.push(`LOCATION:${event.location}`)
-  if (event.description) ics.push(`DESCRIPTION:${event.description}`)
+  if (event.location) ics.push(`LOCATION:${escapeIcsText(event.location)}`)
+  ics.push(`URL:${eventUrl}`)
+  ics.push(`DESCRIPTION:${escapeIcsText(description)}`)
 
   ics.push('END:VEVENT')
 }

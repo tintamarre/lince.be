@@ -142,7 +142,11 @@ onMounted(async () => {
       </div>
 
       <template v-if="!compact && event.description">
-        <p ref="descEl" class="mt-2 text-base text-village-600 leading-relaxed" :class="{ 'line-clamp-3': !expanded }">
+        <p
+          ref="descEl"
+          class="mt-2 text-base text-village-600 leading-relaxed whitespace-pre-line"
+          :class="{ 'line-clamp-3': !expanded }"
+        >
           {{ event.description }}
         </p>
         <button

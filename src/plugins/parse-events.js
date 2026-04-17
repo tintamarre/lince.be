@@ -48,7 +48,8 @@ export function parseEventsMd(content) {
 
     const descriptionLines = []
     for (let i = 1; i < lines.length; i++) {
-      const line = lines[i].trim()
+      const rawLine = lines[i]
+      const line = rawLine.trim()
       const metaMatch = line.match(/^-\s*\*\*(.+?):\*\*\s*(.+)$/)
       if (metaMatch) {
         const key = metaMatch[1].toLowerCase()
@@ -64,11 +65,13 @@ export function parseEventsMd(content) {
         else if (key === 'catégorie' || key === 'categorie') event.category = value
         else if (key === 'date fin') event.endDate = value
         else if (key === 'documents') event.attachments = parseAttachments(value)
-      } else if (line) {
-        descriptionLines.push(line)
+      } else {
+        descriptionLines.push(rawLine.trim())
       }
     }
-    event.description = descriptionLines.join(' ')
+    while (descriptionLines[0] === '') descriptionLines.shift()
+    while (descriptionLines.at(-1) === '') descriptionLines.pop()
+    event.description = descriptionLines.join('\n')
     events.push(event)
   }
 
