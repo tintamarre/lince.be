@@ -1,13 +1,12 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { writeFileSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { parseEventsMd } from '../src/plugins/parse-events.js'
+import { loadEvents } from '../src/plugins/parse-events.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const rootDir = resolve(__dirname, '..')
 
-const content = readFileSync(resolve(rootDir, 'src/data/events.md'), 'utf-8')
-const events = parseEventsMd(content)
+const events = loadEvents(rootDir)
 const now = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
 const siteUrl = 'https://lince.be'
 

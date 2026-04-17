@@ -1,27 +1,25 @@
-import { readFileSync } from 'fs'
-import { resolve } from 'path'
-import { parseEventsMd } from './parse-events.js'
+import { getEventWatchPaths, isEventSourceFile, loadEvents } from './parse-events.js'
 
 const EVENTS_ID = 'virtual:events'
 const RESOLVED_ID = '\0' + EVENTS_ID
 
 export default function markdownEvents() {
-  const eventsPath = resolve('src/data/events.md')
-
   return {
     name: 'markdown-events',
+    configureServer(server) {
+      server.watcher.add(getEventWatchPaths())
+    },
     resolveId(id) {
       if (id === EVENTS_ID) return RESOLVED_ID
     },
     load(id) {
       if (id === RESOLVED_ID) {
-        const content = readFileSync(eventsPath, 'utf-8')
-        const events = parseEventsMd(content)
+        const events = loadEvents()
         return `export default ${JSON.stringify(events)}`
       }
     },
     handleHotUpdate({ file, server }) {
-      if (file === eventsPath) {
+      if (isEventSourceFile(file)) {
         const module = server.moduleGraph.getModuleById(RESOLVED_ID)
         if (module) {
           server.moduleGraph.invalidateModule(module)

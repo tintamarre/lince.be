@@ -8,6 +8,10 @@ body:
       value: |
         Merci de proposer un événement pour l'agenda de Lincé !
         Remplissez les informations ci-dessous et nous l'ajouterons au site.
+        
+        Format utilisé dans les sources :
+        `## AAAA-MM-JJ | Titre`
+        puis des champs stricts comme `Lieu`, `Horaire`, `Catégorie`, `Date fin` et `Documents`.
 
   - type: input
     id: title
@@ -30,7 +34,8 @@ body:
     id: horaire
     attributes:
       label: Horaire
-      description: "Heure de début et de fin (laisser vide si toute la journée)"
+      description: "Format strict si renseigné : HH:MM - HH:MM"
+      placeholder: "14:00 - 18:00"
 
   - type: input
     id: lieu
@@ -64,7 +69,13 @@ body:
     id: documents
     attributes:
       label: Documents ou liens
-      description: "Ajoutez ici des liens vers des affiches, parcours GPX, sites web, etc."
+      description: "Utilisez de préférence des liens Markdown : [Affiche](https://example.com/affiche.jpg)"
       placeholder: |
-        - Affiche : https://example.com/affiche.jpg
-        - Site web : https://example.com
+        [Affiche](https://example.com/affiche.jpg), [Site web](https://example.com)
+
+  - type: input
+    id: source_file
+    attributes:
+      label: Fichier ou dossier conseillé
+      description: "Optionnel : ex. comité-scolaire.md, village/2026.md"
+      placeholder: "comite-scolaire.md"

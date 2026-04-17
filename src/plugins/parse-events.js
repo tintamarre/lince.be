@@ -1,6 +1,46 @@
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
+import { relative, resolve, sep } from 'node:path'
+
 const IMAGE_EXTS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']
 const GPX_EXTS = ['gpx']
 const DOC_EXTS = ['pdf', 'doc', 'docx', 'xls', 'xlsx']
+
+const ROOT_EVENTS_FILE = resolve('src/data/events.md')
+const EVENTS_DIR = resolve('src/data/events')
+
+const META_FIELD_NAMES = {
+  lieu: 'location',
+  horaire: 'schedule',
+  catégorie: 'category',
+  categorie: 'category',
+  'date fin': 'endDate',
+  documents: 'attachments',
+}
+
+function fail(source, line, message) {
+  throw new Error(`${source}:${line} ${message}`)
+}
+
+function isValidDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false
+
+  const [year, month, day] = value.split('-').map(Number)
+  const date = new Date(Date.UTC(year, month - 1, day))
+
+  return (
+    date.getUTCFullYear() === year &&
+    date.getUTCMonth() === month - 1 &&
+    date.getUTCDate() === day
+  )
+}
+
+function isValidTime(value) {
+  return /^([01]\d|2[0-3]):([0-5]\d)$/.test(value)
+}
+
+function slugifyTitle(title) {
+  return title.toLowerCase().replace(/[^a-zà-ÿ0-9]+/g, '-').replace(/-+$/, '')
+}
 
 function detectType(url) {
   const ext = url.split('.').pop()?.toLowerCase().split('?')[0] || ''
@@ -10,10 +50,11 @@ function detectType(url) {
   return 'link'
 }
 
-function parseAttachments(value) {
+function parseAttachments(value, source, line) {
   const attachments = []
   const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
   let match
+
   while ((match = linkRegex.exec(value)) !== null) {
     attachments.push({
       label: match[1].trim(),
@@ -21,59 +62,225 @@ function parseAttachments(value) {
       type: detectType(match[2].trim()),
     })
   }
+
+  if (attachments.length === 0) {
+    fail(source, line, 'Documents doit contenir au moins un lien Markdown du type [Label](URL).')
+  }
+
+  const leftover = value.replace(linkRegex, '').replace(/,/g, '').trim()
+  if (leftover) {
+    fail(source, line, 'Documents ne peut contenir que des liens Markdown séparés par des virgules.')
+  }
+
   return attachments
 }
 
-export function parseEventsMd(content) {
-  const events = []
-  const blocks = content.split(/^## /m).filter(Boolean)
+function trimEmptyLines(lines) {
+  while (lines[0] === '') lines.shift()
+  while (lines.at(-1) === '') lines.pop()
+  return lines
+}
 
-  for (const block of blocks) {
-    const lines = block.trim().split('\n')
-    const headerMatch = lines[0].match(/^(\d{4}-\d{2}-\d{2})\s*\|\s*(.+)$/)
-    if (!headerMatch) continue
+function parseEventBlock(block, source, startLine) {
+  const lines = block.split('\n')
+  const headerMatch = lines[0].match(/^##\s+(\d{4}-\d{2}-\d{2})\s*\|\s*(.+?)\s*$/)
 
-    const event = {
-      id: headerMatch[1] + '-' + headerMatch[2].toLowerCase().replace(/[^a-zà-ÿ0-9]+/g, '-').replace(/-+$/, ''),
-      startDate: headerMatch[1],
-      title: headerMatch[2].trim(),
-      description: '',
-      location: '',
-      startTime: '',
-      endTime: '',
-      endDate: headerMatch[1],
-      category: '',
-      attachments: [],
-    }
-
-    const descriptionLines = []
-    for (let i = 1; i < lines.length; i++) {
-      const rawLine = lines[i]
-      const line = rawLine.trim()
-      const metaMatch = line.match(/^-\s*\*\*(.+?):\*\*\s*(.+)$/)
-      if (metaMatch) {
-        const key = metaMatch[1].toLowerCase()
-        const value = metaMatch[2].trim()
-        if (key === 'lieu') event.location = value
-        else if (key === 'horaire') {
-          const timeMatch = value.match(/^(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})$/)
-          if (timeMatch) {
-            event.startTime = timeMatch[1]
-            event.endTime = timeMatch[2]
-          }
-        }
-        else if (key === 'catégorie' || key === 'categorie') event.category = value
-        else if (key === 'date fin') event.endDate = value
-        else if (key === 'documents') event.attachments = parseAttachments(value)
-      } else {
-        descriptionLines.push(rawLine.trim())
-      }
-    }
-    while (descriptionLines[0] === '') descriptionLines.shift()
-    while (descriptionLines.at(-1) === '') descriptionLines.pop()
-    event.description = descriptionLines.join('\n')
-    events.push(event)
+  if (!headerMatch) {
+    fail(source, startLine, 'Titre invalide. Format attendu : ## AAAA-MM-JJ | Titre')
   }
 
-  return events
+  const [, startDate, rawTitle] = headerMatch
+  const title = rawTitle.trim()
+
+  if (!isValidDate(startDate)) {
+    fail(source, startLine, `Date invalide "${startDate}". Format attendu : AAAA-MM-JJ.`)
+  }
+
+  if (!title) {
+    fail(source, startLine, 'Le titre de l’événement ne peut pas être vide.')
+  }
+
+  const event = {
+    id: `${startDate}-${slugifyTitle(title)}`,
+    startDate,
+    title,
+    description: '',
+    location: '',
+    startTime: '',
+    endTime: '',
+    endDate: startDate,
+    category: '',
+    attachments: [],
+  }
+
+  const seenFields = new Set()
+  const descriptionLines = []
+  let descriptionStarted = false
+
+  for (let i = 1; i < lines.length; i++) {
+    const rawLine = lines[i]
+    const trimmedLine = rawLine.trim()
+    const lineNumber = startLine + i
+
+    if (trimmedLine === '') {
+      if (descriptionStarted) descriptionLines.push('')
+      continue
+    }
+
+    const metaMatch = trimmedLine.match(/^-\s+\*\*([^*]+):\*\*\s+(.+)\s*$/)
+    if (metaMatch) {
+      if (descriptionStarted) {
+        fail(source, lineNumber, 'Les métadonnées doivent apparaître avant la description.')
+      }
+
+      const rawKey = metaMatch[1].trim().toLowerCase()
+      const value = metaMatch[2].trim()
+      const fieldName = META_FIELD_NAMES[rawKey]
+
+      if (!fieldName) {
+        fail(source, lineNumber, `Champ non supporté "${metaMatch[1].trim()}".`)
+      }
+
+      if (seenFields.has(fieldName)) {
+        fail(source, lineNumber, `Champ dupliqué "${metaMatch[1].trim()}".`)
+      }
+
+      seenFields.add(fieldName)
+
+      if (fieldName === 'location') {
+        event.location = value
+      } else if (fieldName === 'schedule') {
+        const timeMatch = value.match(/^(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})$/)
+        if (!timeMatch || !isValidTime(timeMatch[1]) || !isValidTime(timeMatch[2])) {
+          fail(source, lineNumber, 'Horaire invalide. Format attendu : HH:MM - HH:MM.')
+        }
+
+        if (timeMatch[2] <= timeMatch[1]) {
+          fail(source, lineNumber, 'L’heure de fin doit être après l’heure de début.')
+        }
+
+        event.startTime = timeMatch[1]
+        event.endTime = timeMatch[2]
+      } else if (fieldName === 'category') {
+        event.category = value
+      } else if (fieldName === 'endDate') {
+        if (!isValidDate(value)) {
+          fail(source, lineNumber, `Date fin invalide "${value}". Format attendu : AAAA-MM-JJ.`)
+        }
+
+        if (value < event.startDate) {
+          fail(source, lineNumber, 'La date de fin ne peut pas être avant la date de début.')
+        }
+
+        event.endDate = value
+      } else if (fieldName === 'attachments') {
+        event.attachments = parseAttachments(value, source, lineNumber)
+      }
+
+      continue
+    }
+
+    if (trimmedLine.startsWith('- **')) {
+      fail(source, lineNumber, 'Métadonnée invalide. Format attendu : - **Clé:** valeur')
+    }
+
+    descriptionStarted = true
+    descriptionLines.push(rawLine.trimEnd())
+  }
+
+  event.description = trimEmptyLines(descriptionLines).join('\n')
+
+  return event
 }
+
+function collectMarkdownFiles(dirPath) {
+  if (!existsSync(dirPath)) return []
+
+  return readdirSync(dirPath, { withFileTypes: true })
+    .sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+    .flatMap((entry) => {
+      const fullPath = resolve(dirPath, entry.name)
+      if (entry.isDirectory()) return collectMarkdownFiles(fullPath)
+      return entry.isFile() && entry.name.endsWith('.md') ? [fullPath] : []
+    })
+}
+
+export function getEventSourcePaths(rootDir = process.cwd()) {
+  const rootFile = resolve(rootDir, 'src/data/events.md')
+  const eventsDir = resolve(rootDir, 'src/data/events')
+  const sourcePaths = []
+
+  if (existsSync(rootFile)) sourcePaths.push(rootFile)
+  sourcePaths.push(...collectMarkdownFiles(eventsDir))
+
+  if (sourcePaths.length === 0) {
+    throw new Error('Aucune source d’événements trouvée. Ajoutez src/data/events.md ou des fichiers .md dans src/data/events/.')
+  }
+
+  return sourcePaths
+}
+
+export function getEventWatchPaths(rootDir = process.cwd()) {
+  return [
+    resolve(rootDir, 'src/data/events.md'),
+    resolve(rootDir, 'src/data/events'),
+  ]
+}
+
+export function isEventSourceFile(filePath, rootDir = process.cwd()) {
+  const resolvedFile = resolve(filePath)
+  const rootFile = resolve(rootDir, 'src/data/events.md')
+  const eventsDir = resolve(rootDir, 'src/data/events')
+
+  return (
+    resolvedFile === rootFile ||
+    (resolvedFile.startsWith(eventsDir + sep) && resolvedFile.endsWith('.md'))
+  )
+}
+
+export function parseEventsMd(content, source = 'src/data/events.md') {
+  const normalizedContent = content.replace(/\r\n/g, '\n')
+  if (!normalizedContent.trim()) return []
+
+  const headingMatches = [...normalizedContent.matchAll(/^##\s+.*$/gm)]
+  if (headingMatches.length === 0) {
+    fail(source, 1, 'Aucun événement trouvé. Chaque événement doit commencer par "## AAAA-MM-JJ | Titre".')
+  }
+
+  return headingMatches.map((match, index) => {
+    const startIndex = match.index
+    const endIndex = headingMatches[index + 1]?.index ?? normalizedContent.length
+    const block = normalizedContent.slice(startIndex, endIndex).trimEnd()
+    const startLine = normalizedContent.slice(0, startIndex).split('\n').length
+    return parseEventBlock(block, source, startLine)
+  })
+}
+
+export function loadEvents(rootDir = process.cwd()) {
+  const sourcePaths = getEventSourcePaths(rootDir)
+  const events = []
+  const knownIds = new Map()
+
+  for (const sourcePath of sourcePaths) {
+    const source = relative(rootDir, sourcePath) || sourcePath
+    const content = readFileSync(sourcePath, 'utf-8')
+    const parsedEvents = parseEventsMd(content, source)
+
+    for (const event of parsedEvents) {
+      const existingSource = knownIds.get(event.id)
+      if (existingSource) {
+        throw new Error(`${source} ID d’événement dupliqué "${event.id}", déjà utilisé dans ${existingSource}.`)
+      }
+
+      knownIds.set(event.id, source)
+      events.push(event)
+    }
+  }
+
+  return events.sort((a, b) => {
+    if (a.startDate !== b.startDate) return a.startDate.localeCompare(b.startDate)
+    return a.title.localeCompare(b.title, 'fr')
+  })
+}
+
+export { EVENTS_DIR, ROOT_EVENTS_FILE }
