@@ -37,6 +37,16 @@ Appel aux musicien(ne)s et chanteur(se)s : si vous êtes intéressé(e), ou si v
 
 Contact : 0494 23 48 23.
 
+## 2026-05-22 | Vente de Lincette
+- **Lieu:** Rue Henri Simon, 4140 Lincé (50.512402, 5.6287464)
+- **Catégorie:** fête
+
+Vente de Lincette à partir de 18h.
+
+Prix : 60 euros les 24.
+
+Apéro et petite dégustation.
+
 ## 2026-05-31 | Pétanque Pastis Pizza (3P) de Lincé
 - **Catégorie:** fête
 - **Lieu:** 50°30'50.7"N 5°37'41.8"E
