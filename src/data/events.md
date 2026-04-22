@@ -38,7 +38,7 @@ Appel aux musicien(ne)s et chanteur(se)s : si vous êtes intéressé(e), ou si v
 Contact : 0494 23 48 23.
 
 ## 2026-05-22 | Vente de Lincette
-- **Lieu:** 50°30'44.6"N 5°37'43.5"E
+- **Lieu:** 50°30'44.7"N 5°37'45.9"E
 - **Catégorie:** fête
 
 Vente de Lincette à partir de 18h.
