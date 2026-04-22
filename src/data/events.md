@@ -25,6 +25,18 @@ Trois distances sont proposées: 5 km, 12 km et un trail de 23 km. Une course gr
 
 Venez découvrir les sentiers autour du village ou encourager les participants autour d'un verre et d'un pain saucisse à l'arrivée.
 
+## 2026-05-17 | Marche solidaire de Lincé
+- **Lieu:** École communale de Lincé, rue de l'Enseignement 5, 4140 Lincé
+- **Catégorie:** sport
+
+Marche solidaire au départ de l'école de Lincé.
+
+Prix : 6 euros.
+
+Appel aux musicien(ne)s et chanteur(se)s : si vous êtes intéressé(e), ou si vous connaissez quelqu'un qui pourrait l'être, n'hésitez pas à prendre contact ou à partager l'information.
+
+Contact : 0494 23 48 23.
+
 ## 2026-05-31 | Pétanque Pastis Pizza (3P) de Lincé
 - **Catégorie:** fête
 - **Lieu:** 50°30'50.7"N 5°37'41.8"E
