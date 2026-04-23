@@ -1,19 +1,24 @@
 <template>
-  <div class="flex-1">
-    <h4 class="text-xs font-medium uppercase tracking-widest text-village-400 mb-2">Proposer</h4>
-    <p class="text-sm text-village-600 mb-3">
+  <div>
+    <div class="font-mono text-[11px] font-bold tracking-widest uppercase text-accent-500 mb-2">
+      05 / PROPOSER
+    </div>
+    <h4 class="font-display text-xl uppercase text-village-900 leading-tight mb-2">
       Un événement à ajouter ?
+    </h4>
+    <p class="text-[14px] text-village-700 mb-4">
+      Ouvrez un ticket sur GitHub — on s'occupe du reste.
     </p>
     <a
       href="https://github.com/tintamarre/lince.be/issues/new?template=nouvel-evenement.yml"
       target="_blank"
       rel="noopener"
-      class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-village-700 bg-village-100 rounded-lg hover:bg-village-200 transition-colors"
+      class="inline-flex items-center gap-2 px-4 py-2.5 bg-village-900 text-village-50 border-2 border-village-900 font-mono text-[11px] font-bold tracking-widest uppercase shadow-[4px_4px_0_0_var(--color-accent-500)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_var(--color-accent-500)] transition-all"
     >
       <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 16 16">
         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
       </svg>
-      Proposer via GitHub
+      PROPOSER VIA GITHUB →
     </a>
   </div>
 </template>

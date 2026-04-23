@@ -8,37 +8,50 @@ const showPast = ref(false)
 </script>
 
 <template>
-  <div class="space-y-10">
-    <section v-for="group in groupedByMonth" :key="group.label">
-      <h3 class="text-sm font-semibold uppercase tracking-wider text-village-400 mb-4 capitalize">
-        {{ group.label }}
+  <div>
+    <section
+      v-for="(group, gi) in groupedByMonth"
+      :key="group.label"
+      class="border-2 border-village-900 mb-8 bg-village-50"
+    >
+      <h3 class="font-mono text-[11px] font-bold tracking-widest uppercase text-village-900 px-5 sm:px-8 py-2 bg-village-100 border-b-2 border-village-900 flex justify-between items-center">
+        <span>{{ String(gi + 1).padStart(2, '0') }} / {{ group.label }}</span>
+        <span class="text-village-500">{{ group.events.length }} ÉV.</span>
       </h3>
-      <div class="divide-y divide-village-200/60">
-        <EventCard v-for="event in group.events" :key="event.id" :event="event" />
-      </div>
+      <EventCard
+        v-for="(event, i) in group.events"
+        :key="event.id"
+        :event="event"
+        :index="i + 1"
+      />
     </section>
 
-    <p v-if="groupedByMonth.length === 0" class="text-center text-village-400 py-16 text-sm">
-      Aucun événement à venir pour le moment.
+    <p
+      v-if="groupedByMonth.length === 0"
+      class="text-center font-mono text-xs tracking-widest uppercase text-village-500 py-16 border-2 border-dashed border-village-300"
+    >
+      AUCUN ÉVÉNEMENT À VENIR
     </p>
 
     <section v-if="pastEvents.length > 0" class="pt-4">
       <button
-        class="text-xs text-village-400 hover:text-village-600 transition-colors flex items-center gap-1.5"
+        class="font-mono text-[11px] font-bold tracking-widest uppercase text-village-500 hover:text-accent-500 transition-colors flex items-center gap-2"
         @click="showPast = !showPast"
       >
-        <svg
-          class="w-3 h-3 transition-transform"
-          :class="{ 'rotate-90': showPast }"
-          fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-        Événements passés ({{ pastEvents.length }})
+        <span class="transition-transform inline-block" :class="{ 'rotate-90': showPast }">▸</span>
+        ÉVÉNEMENTS PASSÉS [ {{ pastEvents.length }} ]
       </button>
-      <div v-if="showPast" class="mt-4 divide-y divide-village-200/40 opacity-50">
-        <EventCard v-for="event in pastEvents" :key="event.id" :event="event" />
-      </div>
+      <section
+        v-if="showPast"
+        class="mt-4 border-2 border-village-300 opacity-70"
+      >
+        <EventCard
+          v-for="(event, i) in pastEvents"
+          :key="event.id"
+          :event="event"
+          :index="i + 1"
+        />
+      </section>
     </section>
   </div>
 </template>

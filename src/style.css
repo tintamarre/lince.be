@@ -1,40 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cool slate — clean, neutral, like a well-printed notice board */
-  --color-village-50: #f8fafc;
-  --color-village-100: #f1f5f9;
-  --color-village-200: #e2e8f0;
-  --color-village-300: #cbd5e1;
-  --color-village-400: #94a3b8;
-  --color-village-500: #64748b;
-  --color-village-600: #475569;
-  --color-village-700: #334155;
-  --color-village-800: #1e293b;
-  --color-village-900: #0f172a;
-  --color-village-950: #020617;
+  /* Brutalist · bone → ink */
+  --color-village-50: #fafaf5;
+  --color-village-100: #f3f2e8;
+  --color-village-200: #e5e4d8;
+  --color-village-300: #bfbdb0;
+  --color-village-400: #8e8c80;
+  --color-village-500: #5c5b54;
+  --color-village-600: #3a3a36;
+  --color-village-700: #1f1f1d;
+  --color-village-800: #121210;
+  --color-village-900: #0a0a0a;
+  --color-village-950: #000000;
 
-  /* Blue-gray accent — stronger contrast while staying understated */
-  --color-accent-50: #ebedf1;
-  --color-accent-100: #d6dbe4;
-  --color-accent-200: #aeb7c9;
-  --color-accent-300: #8594ad;
-  --color-accent-400: #5d7092;
-  --color-accent-500: #344c77;
-  --color-accent-600: #2a3d5f;
-  --color-accent-700: #1f2e47;
-  --color-accent-800: #151e30;
-  --color-accent-900: #0a0f18;
+  /* Orange fluorescent accent */
+  --color-accent-50: #fff1ec;
+  --color-accent-100: #ffd9c7;
+  --color-accent-200: #ffb499;
+  --color-accent-300: #ff8a66;
+  --color-accent-400: #ff5e33;
+  --color-accent-500: #ff4a1c;
+  --color-accent-600: #e03a10;
+  --color-accent-700: #b82e0a;
+  --color-accent-800: #8c2208;
+  --color-accent-900: #631705;
 
-  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo Black", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 body {
   @apply bg-village-50 text-village-900 antialiased;
+  background-image: linear-gradient(to right, rgba(10, 10, 10, 0.05) 1px, transparent 1px);
+  background-size: 4rem 100%;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: var(--color-accent-500);
+  color: var(--color-village-50);
 }

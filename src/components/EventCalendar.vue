@@ -5,10 +5,10 @@ import EventCard from './EventCard.vue'
 
 const { eventsForDate } = useEvents()
 
-const DAYS_FR = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
+const DAYS_FR = ['LUN', 'MAR', 'MER', 'JEU', 'VEN', 'SAM', 'DIM']
 const MONTHS_FR = [
-  'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
-  'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre',
+  'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN',
+  'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE',
 ]
 
 const now = new Date()
@@ -81,68 +81,89 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
 </script>
 
 <template>
-  <div>
+  <div class="border-2 border-village-900 bg-village-50">
     <!-- Month navigation -->
-    <div class="flex items-center justify-between mb-6">
+    <div class="flex items-stretch border-b-2 border-village-900">
       <button
-        class="p-2 rounded-lg hover:bg-village-100 text-village-500 transition-colors"
+        class="px-4 py-3 font-display text-xl text-village-900 border-r-2 border-village-900 hover:bg-village-900 hover:text-accent-500 transition-colors"
         @click="prevMonth"
         aria-label="Mois précédent"
       >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
+        ←
       </button>
-      <h3 class="font-display text-lg font-semibold text-village-900">{{ monthLabel }}</h3>
+      <h3 class="flex-1 flex items-center justify-center font-display uppercase text-village-900 text-lg sm:text-xl tracking-tight">
+        {{ monthLabel }}
+      </h3>
       <button
-        class="p-2 rounded-lg hover:bg-village-100 text-village-500 transition-colors"
+        class="px-4 py-3 font-display text-xl text-village-900 border-l-2 border-village-900 hover:bg-village-900 hover:text-accent-500 transition-colors"
         @click="nextMonth"
         aria-label="Mois suivant"
       >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
+        →
       </button>
     </div>
 
     <!-- Day headers -->
-    <div class="grid grid-cols-7 mb-1">
-      <div v-for="day in DAYS_FR" :key="day" class="text-center text-[10px] font-medium text-village-400 uppercase tracking-widest">
+    <div class="grid grid-cols-7 border-b-2 border-village-900 bg-village-100">
+      <div
+        v-for="day in DAYS_FR"
+        :key="day"
+        class="text-center font-mono text-[10px] font-bold tracking-widest text-village-900 py-1.5"
+      >
         {{ day }}
       </div>
     </div>
 
     <!-- Calendar grid -->
-    <div class="grid grid-cols-7 gap-px bg-village-200 rounded-lg overflow-hidden">
+    <div class="grid grid-cols-7">
       <button
         v-for="(cell, i) in calendarDays"
         :key="i"
-        class="relative p-2 min-h-[3rem] text-sm transition-colors"
-        :class="{
-          'bg-village-50/50 text-village-300': cell.outside,
-          'bg-village-50 text-village-800 hover:bg-village-100': !cell.outside && !hasEvents(cell.date),
-          'bg-accent-200 text-accent-900 font-semibold hover:bg-accent-300': !cell.outside && hasEvents(cell.date),
-          '!bg-accent-600 !text-white': selectedDate === cell.date,
-        }"
+        class="relative min-h-[3rem] sm:min-h-[3.5rem] font-mono text-sm transition-colors border-r border-b border-village-900/20"
+        :class="[
+          (i % 7 === 6) ? '!border-r-0' : '',
+          cell.outside
+            ? 'bg-village-100/50 text-village-300'
+            : hasEvents(cell.date)
+              ? 'bg-accent-100 text-village-900 font-bold hover:bg-accent-500 hover:text-village-50'
+              : 'bg-village-50 text-village-700 hover:bg-village-100',
+          selectedDate === cell.date ? '!bg-village-900 !text-accent-500' : '',
+        ]"
         @click="!cell.outside && selectDate(cell.date)"
         :disabled="cell.outside"
       >
         <span
-          v-if="isToday(cell.date)"
-          class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-village-800 text-white text-sm font-medium"
+          v-if="isToday(cell.date) && selectedDate !== cell.date"
+          class="inline-flex items-center justify-center w-7 h-7 bg-village-900 text-village-50 font-display text-sm"
         >
           {{ cell.day }}
         </span>
-        <span v-else>{{ cell.day }}</span>
+        <span v-else>{{ String(cell.day).padStart(2, '0') }}</span>
+        <span
+          v-if="hasEvents(cell.date) && !cell.outside"
+          class="absolute bottom-1 right-1 w-1.5 h-1.5 bg-accent-500"
+          :class="selectedDate === cell.date ? '!bg-accent-500' : ''"
+        ></span>
       </button>
     </div>
 
     <!-- Selected date events -->
-    <div v-if="selectedDate && selectedEvents.length > 0" class="mt-6 divide-y divide-village-200/60">
-      <EventCard v-for="event in selectedEvents" :key="event.id" :event="event" />
+    <div v-if="selectedDate && selectedEvents.length > 0" class="border-t-2 border-village-900">
+      <div class="px-5 sm:px-8 py-2 bg-village-900 text-village-50 font-mono text-[11px] font-bold tracking-widest uppercase">
+        {{ selectedDate }} · {{ selectedEvents.length }} ÉVÉNEMENT{{ selectedEvents.length > 1 ? 'S' : '' }}
+      </div>
+      <EventCard
+        v-for="(event, i) in selectedEvents"
+        :key="event.id"
+        :event="event"
+        :index="i + 1"
+      />
     </div>
-    <p v-else-if="selectedDate" class="mt-6 text-center text-sm text-village-400">
-      Aucun événement ce jour.
+    <p
+      v-else-if="selectedDate"
+      class="border-t-2 border-village-900 text-center font-mono text-xs tracking-widest uppercase text-village-500 py-8"
+    >
+      AUCUN ÉVÉNEMENT CE JOUR
     </p>
   </div>
 </template>
