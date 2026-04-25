@@ -199,9 +199,16 @@ onMounted(async () => {
       </div>
     </div>
 
-    <!-- Arrow -->
-    <div class="hidden sm:flex items-start justify-end font-display text-2xl text-village-300 group-hover:text-accent-500 group-hover:translate-x-1 transition-all">
+    <!-- Expand toggle -->
+    <button
+      v-if="!compact && event.description"
+      type="button"
+      class="hidden sm:flex items-start justify-end font-display text-2xl text-village-300 hover:text-accent-500 transition-all cursor-pointer"
+      :class="expanded ? 'text-accent-500 rotate-90' : 'group-hover:text-accent-500 group-hover:translate-x-1'"
+      :aria-label="expanded ? 'Réduire l’événement' : 'Développer l’événement'"
+      @click="toggleExpand"
+    >
       →
-    </div>
+    </button>
   </article>
 </template>

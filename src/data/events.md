@@ -47,10 +47,14 @@ Prix : 60 euros les 24.
 
 Apéro et petite dégustation.
 
-## 2026-05-31 | Pétanque Pastis Pizza (3P) de Lincé
+## 2026-05-31 | Pétanque ti-Punchs Pinsas (3P) de Lincé
 - **Catégorie:** fête
 - **Lieu:** 50°30'50.7"N 5°37'41.8"E
 Tournoi et moment convivial autour de la pétanque à Lincé.
+
+RDV à 10h30 au Presbytère. Début du tournoi à 11h.
+
+Inscriptions: 0493 / 39 23 94
 
 ## 2026-06-21 | Brocante de Lincé
 - **Catégorie:** marché
