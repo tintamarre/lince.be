@@ -16,7 +16,7 @@ const nextEvents = upcomingEvents.value.slice(0, 3)
         </div>
         <div class="grid md:grid-cols-[2fr_1fr]">
           <h1 class="font-display uppercase text-village-900 px-5 sm:px-8 py-6 md:py-8 border-b md:border-b-0 md:border-r-2 border-village-900 text-[clamp(3rem,12vw,9rem)] leading-[0.85] tracking-[-0.04em]">
-            UN<br />VILLAGE<br />DE<br /><span class="bg-accent-500 text-village-50 px-2 inline-block">WALLONIE.</span>
+            LINCÉ<br /><span class="bg-accent-500 text-village-50 px-2 py-1 inline-block text-[0.2em] leading-none tracking-[0.08em] align-top whitespace-nowrap">VILLAGE DE WALLONIE.</span>
           </h1>
           <div class="px-5 sm:px-8 py-6 md:py-8 flex flex-col gap-5">
             <dl class="flex flex-col gap-0 font-mono text-[13px]">
@@ -67,10 +67,9 @@ const nextEvents = upcomingEvents.value.slice(0, 3)
         </div>
         <div>
           <EventCard
-            v-for="(event, i) in nextEvents"
+            v-for="event in nextEvents"
             :key="event.id"
             :event="event"
-            :index="i + 1"
           />
         </div>
       </div>

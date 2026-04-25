@@ -6,7 +6,6 @@ import { useEvents } from '../composables/useEvents.js'
 const props = defineProps({
   event: { type: Object, required: true },
   compact: { type: Boolean, default: false },
-  index: { type: Number, default: null },
 })
 
 const { formatDay, formatRelativeDiff } = useEvents()
@@ -103,18 +102,11 @@ onMounted(async () => {
     class="group grid gap-4 sm:gap-6 px-5 sm:px-8 py-6 border-b border-village-900/20 transition-colors hover:bg-village-100/50"
     :class="[
       isHighlighted ? 'bg-accent-500/10 border-l-4 border-l-accent-500' : '',
-      index !== null
-        ? 'grid-cols-[2.5rem_auto_1fr] sm:grid-cols-[2.5rem_9rem_1fr_2rem]'
-        : 'grid-cols-[auto_1fr] sm:grid-cols-[9rem_1fr_2rem]',
+      'grid-cols-[auto_1fr] sm:grid-cols-[9rem_1fr_2rem]',
     ]"
   >
-    <!-- Index badge -->
-    <div v-if="index !== null" class="font-display text-2xl sm:text-3xl text-accent-500 leading-none">
-      {{ String(index).padStart(2, '0') }}
-    </div>
-
     <!-- Date block -->
-    <div class="border-l-2 border-village-900 pl-3 sm:pl-4">
+    <div class="border-r-2 border-village-900 pr-3 sm:pr-4">
       <div class="font-display text-4xl sm:text-5xl text-village-900 leading-[0.9] tracking-[-0.04em]">
         {{ String(formatDay(event.startDate)).padStart(2, '0') }}
       </div>
@@ -127,10 +119,7 @@ onMounted(async () => {
     </div>
 
     <!-- Body -->
-    <div
-      class="min-w-0"
-      :class="index !== null ? 'col-span-3 sm:col-auto' : 'col-span-2 sm:col-auto'"
-    >
+    <div class="min-w-0 col-span-2 sm:col-auto">
       <div
         v-if="event.category"
         class="font-mono text-[10px] font-bold tracking-widest uppercase text-accent-500 mb-1.5"

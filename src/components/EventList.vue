@@ -22,7 +22,6 @@ const showPast = ref(false)
         v-for="(event, i) in group.events"
         :key="event.id"
         :event="event"
-        :index="i + 1"
       />
     </section>
 
@@ -46,10 +45,9 @@ const showPast = ref(false)
         class="mt-4 border-2 border-village-300 opacity-70"
       >
         <EventCard
-          v-for="(event, i) in pastEvents"
+          v-for="event in pastEvents"
           :key="event.id"
           :event="event"
-          :index="i + 1"
         />
       </section>
     </section>

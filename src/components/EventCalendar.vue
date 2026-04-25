@@ -153,10 +153,9 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
         {{ selectedDate }} · {{ selectedEvents.length }} ÉVÉNEMENT{{ selectedEvents.length > 1 ? 'S' : '' }}
       </div>
       <EventCard
-        v-for="(event, i) in selectedEvents"
+        v-for="event in selectedEvents"
         :key="event.id"
         :event="event"
-        :index="i + 1"
       />
     </div>
     <p
