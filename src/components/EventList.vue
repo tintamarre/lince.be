@@ -15,7 +15,7 @@ const showPast = ref(false)
       class="border-2 border-village-900 mb-8 bg-village-50"
     >
       <h3 class="font-mono text-[11px] font-bold tracking-widest uppercase text-village-900 px-5 sm:px-8 py-2 bg-village-100 border-b-2 border-village-900 flex justify-between items-center">
-        <span>{{ String(gi + 1).padStart(2, '0') }} / {{ group.label }}</span>
+        <span>{{ group.label }}</span>
         <span class="text-village-500">{{ group.events.length }} ÉV.</span>
       </h3>
       <EventCard

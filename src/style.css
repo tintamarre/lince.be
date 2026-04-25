@@ -14,17 +14,17 @@
   --color-village-900: #0a0a0a;
   --color-village-950: #000000;
 
-  /* Orange fluorescent accent */
-  --color-accent-50: #fff1ec;
-  --color-accent-100: #ffd9c7;
-  --color-accent-200: #ffb499;
-  --color-accent-300: #ff8a66;
-  --color-accent-400: #ff5e33;
-  --color-accent-500: #ff4a1c;
-  --color-accent-600: #e03a10;
-  --color-accent-700: #b82e0a;
-  --color-accent-800: #8c2208;
-  --color-accent-900: #631705;
+  /* Mesylab green accent (#2a9d8f) */
+  --color-accent-50: #eef8f7;
+  --color-accent-100: #d5efeb;
+  --color-accent-200: #addfd7;
+  --color-accent-300: #7cc9c0;
+  --color-accent-400: #52b2a7;
+  --color-accent-500: #2a9d8f;
+  --color-accent-600: #217f74;
+  --color-accent-700: #1a635b;
+  --color-accent-800: #134943;
+  --color-accent-900: #0c312d;
 
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Archivo Black", ui-sans-serif, system-ui, sans-serif;

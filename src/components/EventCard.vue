@@ -102,24 +102,24 @@ onMounted(async () => {
     class="group grid gap-4 sm:gap-6 px-5 sm:px-8 py-6 border-b border-village-900/20 transition-colors hover:bg-village-100/50"
     :class="[
       isHighlighted ? 'bg-accent-500/10 border-l-4 border-l-accent-500' : '',
-      'grid-cols-[auto_1fr] sm:grid-cols-[9rem_1fr_2rem]',
+      'grid-cols-1 sm:grid-cols-[9rem_1fr_2rem]',
     ]"
   >
     <!-- Date block -->
-    <div class="border-r-2 border-village-900 pr-3 sm:pr-4">
-      <div class="font-display text-4xl sm:text-5xl text-village-900 leading-[0.9] tracking-[-0.04em]">
+    <div class="border-b-2 pb-3 sm:border-b-0 sm:border-r-2 sm:pb-0 sm:pr-4">
+      <div class="font-display text-3xl sm:text-5xl text-village-900 leading-[0.9] tracking-[-0.04em]">
         {{ String(formatDay(event.startDate)).padStart(2, '0') }}
       </div>
-      <div class="mt-1.5 font-mono text-[11px] font-bold tracking-widest text-village-900">
+      <div class="mt-1 font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.12em] sm:tracking-widest text-village-900">
         {{ monthLabel(event.startDate) }} {{ yearLabel(event.startDate) }}
       </div>
-      <div class="font-mono text-[10px] tracking-widest text-village-500 mt-0.5">
+      <div class="font-mono text-[9px] sm:text-[10px] tracking-[0.12em] sm:tracking-widest text-village-500 mt-0.5">
         {{ weekdayLabel(event.startDate) }}<span v-if="relativeDiff" class="text-accent-500 ml-1">· {{ relativeDiff.toUpperCase() }}</span>
       </div>
     </div>
 
     <!-- Body -->
-    <div class="min-w-0 col-span-2 sm:col-auto">
+    <div class="min-w-0 sm:col-auto">
       <div
         v-if="event.category"
         class="font-mono text-[10px] font-bold tracking-widest uppercase text-accent-500 mb-1.5"

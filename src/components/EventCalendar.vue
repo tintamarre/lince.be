@@ -6,9 +6,14 @@ import EventCard from './EventCard.vue'
 const { eventsForDate } = useEvents()
 
 const DAYS_FR = ['LUN', 'MAR', 'MER', 'JEU', 'VEN', 'SAM', 'DIM']
+const DAYS_FR_MIN = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
 const MONTHS_FR = [
   'JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN',
   'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE',
+]
+const MONTHS_FR_SHORT = [
+  'JAN', 'FÉV', 'MAR', 'AVR', 'MAI', 'JUIN',
+  'JUIL', 'AOÛ', 'SEP', 'OCT', 'NOV', 'DÉC',
 ]
 
 const now = new Date()
@@ -17,6 +22,14 @@ const currentYear = ref(now.getFullYear())
 const selectedDate = ref(null)
 
 const monthLabel = computed(() => `${MONTHS_FR[currentMonth.value]} ${currentYear.value}`)
+const monthLabelShort = computed(() => `${MONTHS_FR_SHORT[currentMonth.value]} ${currentYear.value}`)
+const selectedDateLabel = computed(() => {
+  if (!selectedDate.value) return ''
+  const [y, m, d] = selectedDate.value.split('-').map(Number)
+  const date = new Date(y, m - 1, d)
+  const dayName = DAYS_FR[date.getDay() === 0 ? 6 : date.getDay() - 1]
+  return `${dayName} ${String(d).padStart(2, '0')} ${MONTHS_FR_SHORT[m - 1]} ${y}`
+})
 
 const calendarDays = computed(() => {
   const firstDay = new Date(currentYear.value, currentMonth.value, 1)
@@ -85,17 +98,18 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
     <!-- Month navigation -->
     <div class="flex items-stretch border-b-2 border-village-900">
       <button
-        class="px-4 py-3 font-display text-xl text-village-900 border-r-2 border-village-900 hover:bg-village-900 hover:text-accent-500 transition-colors"
+        class="px-3 sm:px-4 py-2.5 sm:py-3 font-display text-lg sm:text-xl text-village-900 border-r-2 border-village-900 hover:bg-village-900 hover:text-accent-500 transition-colors"
         @click="prevMonth"
         aria-label="Mois précédent"
       >
         ←
       </button>
-      <h3 class="flex-1 flex items-center justify-center font-display uppercase text-village-900 text-lg sm:text-xl tracking-tight">
-        {{ monthLabel }}
+      <h3 class="flex-1 flex items-center justify-center font-display uppercase text-village-900 text-base sm:text-xl tracking-tight px-2 text-center">
+        <span class="sm:hidden">{{ monthLabelShort }}</span>
+        <span class="hidden sm:inline">{{ monthLabel }}</span>
       </h3>
       <button
-        class="px-4 py-3 font-display text-xl text-village-900 border-l-2 border-village-900 hover:bg-village-900 hover:text-accent-500 transition-colors"
+        class="px-3 sm:px-4 py-2.5 sm:py-3 font-display text-lg sm:text-xl text-village-900 border-l-2 border-village-900 hover:bg-village-900 hover:text-accent-500 transition-colors"
         @click="nextMonth"
         aria-label="Mois suivant"
       >
@@ -106,11 +120,12 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
     <!-- Day headers -->
     <div class="grid grid-cols-7 border-b-2 border-village-900 bg-village-100">
       <div
-        v-for="day in DAYS_FR"
+        v-for="(day, i) in DAYS_FR"
         :key="day"
-        class="text-center font-mono text-[10px] font-bold tracking-widest text-village-900 py-1.5"
+        class="text-center font-mono text-[9px] sm:text-[10px] font-bold tracking-[0.12em] sm:tracking-widest text-village-900 py-1 sm:py-1.5"
       >
-        {{ day }}
+        <span class="sm:hidden">{{ DAYS_FR_MIN[i] }}</span>
+        <span class="hidden sm:inline">{{ day }}</span>
       </div>
     </div>
 
@@ -119,7 +134,7 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
       <button
         v-for="(cell, i) in calendarDays"
         :key="i"
-        class="relative min-h-[3rem] sm:min-h-[3.5rem] font-mono text-sm transition-colors border-r border-b border-village-900/20"
+        class="relative aspect-square min-h-0 font-mono text-xs sm:text-sm transition-colors border-r border-b border-village-900/20"
         :class="[
           (i % 7 === 6) ? '!border-r-0' : '',
           cell.outside
@@ -134,7 +149,7 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
       >
         <span
           v-if="isToday(cell.date) && selectedDate !== cell.date"
-          class="inline-flex items-center justify-center w-7 h-7 bg-village-900 text-village-50 font-display text-sm"
+          class="inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 bg-village-900 text-village-50 font-display text-xs sm:text-sm"
         >
           {{ cell.day }}
         </span>
@@ -149,8 +164,8 @@ function hasEvents(dateStr) { return eventsForDate(dateStr).length > 0 }
 
     <!-- Selected date events -->
     <div v-if="selectedDate && selectedEvents.length > 0" class="border-t-2 border-village-900">
-      <div class="px-5 sm:px-8 py-2 bg-village-900 text-village-50 font-mono text-[11px] font-bold tracking-widest uppercase">
-        {{ selectedDate }} · {{ selectedEvents.length }} ÉVÉNEMENT{{ selectedEvents.length > 1 ? 'S' : '' }}
+      <div class="px-4 sm:px-8 py-2 bg-village-900 text-village-50 font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.12em] sm:tracking-widest uppercase leading-relaxed">
+        {{ selectedDateLabel }} · {{ selectedEvents.length }} ÉVÉNEMENT{{ selectedEvents.length > 1 ? 'S' : '' }}
       </div>
       <EventCard
         v-for="event in selectedEvents"

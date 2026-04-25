@@ -1035,7 +1035,7 @@ const sampleEvents = [
 .brutal {
   --bg: #fafaf5;
   --ink: #0a0a0a;
-  --accent: #ff4a1c;
+  --accent: #2a9d8f;
   --muted: #555;
   --border: #0a0a0a;
   background: var(--bg);
