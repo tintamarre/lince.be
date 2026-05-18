@@ -5,6 +5,7 @@ const IMAGE_EXTS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']
 const GPX_EXTS = ['gpx']
 const DOC_EXTS = ['pdf', 'doc', 'docx', 'xls', 'xlsx']
 
+const DATA_DIR = resolve('src/data')
 const ROOT_EVENTS_FILE = resolve('src/data/events.md')
 const EVENTS_DIR = resolve('src/data/events')
 
@@ -206,36 +207,25 @@ function collectMarkdownFiles(dirPath) {
 }
 
 export function getEventSourcePaths(rootDir = process.cwd()) {
-  const rootFile = resolve(rootDir, 'src/data/events.md')
-  const eventsDir = resolve(rootDir, 'src/data/events')
-  const sourcePaths = []
-
-  if (existsSync(rootFile)) sourcePaths.push(rootFile)
-  sourcePaths.push(...collectMarkdownFiles(eventsDir))
+  const dataDir = resolve(rootDir, 'src/data')
+  const sourcePaths = collectMarkdownFiles(dataDir)
 
   if (sourcePaths.length === 0) {
-    throw new Error('Aucune source d’événements trouvée. Ajoutez src/data/events.md ou des fichiers .md dans src/data/events/.')
+    throw new Error('Aucune source d’événements trouvée. Ajoutez des fichiers .md dans src/data/.')
   }
 
   return sourcePaths
 }
 
 export function getEventWatchPaths(rootDir = process.cwd()) {
-  return [
-    resolve(rootDir, 'src/data/events.md'),
-    resolve(rootDir, 'src/data/events'),
-  ]
+  return [resolve(rootDir, 'src/data')]
 }
 
 export function isEventSourceFile(filePath, rootDir = process.cwd()) {
   const resolvedFile = resolve(filePath)
-  const rootFile = resolve(rootDir, 'src/data/events.md')
-  const eventsDir = resolve(rootDir, 'src/data/events')
+  const dataDir = resolve(rootDir, 'src/data')
 
-  return (
-    resolvedFile === rootFile ||
-    (resolvedFile.startsWith(eventsDir + sep) && resolvedFile.endsWith('.md'))
-  )
+  return resolvedFile.startsWith(dataDir + sep) && resolvedFile.endsWith('.md')
 }
 
 export function parseEventsMd(content, source = 'src/data/events.md') {
@@ -283,4 +273,4 @@ export function loadEvents(rootDir = process.cwd()) {
   })
 }
 
-export { EVENTS_DIR, ROOT_EVENTS_FILE }
+export { DATA_DIR, EVENTS_DIR, ROOT_EVENTS_FILE }
