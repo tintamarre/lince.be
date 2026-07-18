@@ -35,6 +35,13 @@ const menuOpen = ref(false)
             >
               Agenda
             </RouterLink>
+            <RouterLink
+              to="/bus-65"
+              class="font-mono text-[11px] font-semibold tracking-widest uppercase px-2.5 py-1.5 border-[1.5px] border-transparent text-village-700 hover:bg-accent-500 hover:text-village-50 hover:border-village-900 transition-colors"
+              active-class="!border-village-900 !bg-village-900 !text-village-50"
+            >
+              Bus 65
+            </RouterLink>
           </nav>
         </div>
 
@@ -74,6 +81,14 @@ const menuOpen = ref(false)
           @click="menuOpen = false"
         >
           → Agenda
+        </RouterLink>
+        <RouterLink
+          to="/bus-65"
+          class="block py-2.5 px-1 font-mono text-xs font-semibold tracking-widest uppercase text-village-700"
+          active-class="!text-accent-500"
+          @click="menuOpen = false"
+        >
+          → Bus 65
         </RouterLink>
       </nav>
     </div>
