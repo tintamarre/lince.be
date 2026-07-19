@@ -13,6 +13,7 @@ const TO_AYWAILLE = 'to_aywaille'
 const mapEl = ref(null)
 const line = ref(null)
 const selectedPatternId = ref('')
+const focusedVehicle = ref(null)
 const realtime = ref({ vehicles: [], arrivals: [], nextDepartures: {} })
 const loading = ref(true)
 const status = ref('Chargement')
@@ -21,6 +22,7 @@ const error = ref('')
 
 let map
 let routeLayer
+let busRouteLayer
 let variantLayer
 let stopLayer
 let vehicleLayer
@@ -64,6 +66,11 @@ onBeforeUnmount(() => {
 watch(selectedPattern, () => {
   if (map && selectedPattern.value) drawSelectedPattern()
 })
+
+function clearFocusedVehicle() {
+  focusedVehicle.value = null
+  if (busRouteLayer) busRouteLayer.clearLayers()
+}
 
 async function fetchLineData() {
   const response = await fetch('/data/tec-65.json')
@@ -146,6 +153,7 @@ function initMap(L) {
 
   variantLayer = L.layerGroup().addTo(map)
   routeLayer = L.layerGroup().addTo(map)
+  busRouteLayer = L.layerGroup().addTo(map)
   stopLayer = L.layerGroup().addTo(map)
   vehicleLayer = L.layerGroup().addTo(map)
 }
@@ -194,7 +202,7 @@ function drawVehicles() {
   vehicleLayer.clearLayers()
   realtime.value.vehicles.forEach((vehicle) => {
     const destination = vehicle.direction === TO_LIEGE ? 'Liège' : vehicle.direction === TO_AYWAILLE ? 'Aywaille' : '?'
-    window.L.marker([vehicle.lat, vehicle.lon], {
+    const marker = window.L.marker([vehicle.lat, vehicle.lon], {
       icon: window.L.divIcon({
         className: '',
         html: `<div class="bus65-marker"><b>65</b><span>${destination}</span></div>`,
@@ -208,7 +216,26 @@ function drawVehicles() {
         }<br>Position : ${formatTime(vehicle.timestamp || Math.floor(Date.now() / 1000))}`,
       )
       .addTo(vehicleLayer)
+    marker.on('click', () => focusVehicleRoute(vehicle))
   })
+}
+
+function focusVehicleRoute(vehicle) {
+  const pattern = line.value.patterns.find((item) => item.id === vehicle.patternId)
+  if (!pattern) return
+
+  selectedPatternId.value = pattern.id
+  focusedVehicle.value = vehicle
+  drawBusRoute(pattern)
+}
+
+function drawBusRoute(pattern) {
+  busRouteLayer.clearLayers()
+  window.L.polyline(points(pattern.shape), {
+    color: '#d946ef',
+    weight: 8,
+    opacity: 0.88,
+  }).addTo(busRouteLayer)
 }
 
 function parseVehicles(feed) {
@@ -224,6 +251,7 @@ function parseVehicles(feed) {
       return {
         id: entity.id,
         tripId,
+        patternId: line.value.trip_patterns?.[tripId] || null,
         ...directionPayload(direction),
         lat: position.latitude,
         lon: position.longitude,
@@ -489,6 +517,7 @@ function stopName(stopId) {
             <select
               v-model="selectedPatternId"
               class="w-full border-2 border-village-900 bg-village-50 px-3 py-2 font-mono text-xs"
+              @change="clearFocusedVehicle"
             >
               <option
                 v-for="(pattern, index) in line?.patterns || []"
@@ -501,6 +530,9 @@ function stopName(stopId) {
             <div v-if="selectedPattern" class="mt-3 grid gap-1 font-mono text-[11px] text-village-500">
               <span>{{ selectedPattern.direction_label }} · {{ selectedPattern.headsign }}</span>
               <span>{{ selectedPattern.stops.length }} arrêts · {{ selectedPattern.trip_count }} trajets dans le GTFS</span>
+            </div>
+            <div v-if="focusedVehicle" class="mt-3 border-2 border-village-900 bg-fuchsia-100 p-3 font-mono text-[11px]">
+              Route du bus sélectionné : {{ focusedVehicle.directionLabel }} · {{ focusedVehicle.destination }}
             </div>
           </section>
 
