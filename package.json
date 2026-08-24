@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "node scripts/generate-ics.js && vite build",
     "preview": "vite preview",
-    "ics": "node scripts/generate-ics.js"
+    "ics": "node scripts/generate-ics.js",
+    "tec-65": "node scripts/generate-tec-65.js"
   },
   "license": "MIT",
   "author": {

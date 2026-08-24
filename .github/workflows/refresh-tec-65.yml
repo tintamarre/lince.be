@@ -1,0 +1,43 @@
+name: Refresh Bus 65 data
+
+# TEC rolls its GTFS service period every few weeks, which changes every
+# trip_id. Regenerate public/data/tec-65.json so the realtime page keeps
+# resolving vehicle directions, patterns and the fallback timetable.
+on:
+  schedule:
+    - cron: '0 4 * * 1' # every Monday at 04:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-tec-65
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Regenerate tec-65.json
+        run: node scripts/generate-tec-65.js
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- public/data/tec-65.json; then
+            echo "No changes to tec-65.json."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/tec-65.json
+          git commit -m "chore(bus65): refresh tec-65.json from TEC GTFS feed"
+          git push
