@@ -262,8 +262,8 @@ function parseVehicles(feed) {
       const vehicle = entity.vehicle || {}
       const trip = vehicle.trip || {}
       const tripId = trip.tripId
+      if (!onRoute65(trip)) return null
       const direction = resolveDirection(trip)
-      if (trip.routeId !== line.value.route.id && !direction) return null
       const position = vehicle.position || {}
       if (position.latitude == null || position.longitude == null) return null
       return {
@@ -289,8 +289,8 @@ function parseTripUpdates(feed, now) {
     const update = entity.tripUpdate || {}
     const trip = update.trip || {}
     const tripId = trip.tripId
+    if (!onRoute65(trip)) return
     const direction = resolveDirection(trip)
-    if (trip.routeId !== line.value.route.id && !direction) return
 
     ;(update.stopTimeUpdate || []).forEach((stopUpdate) => {
       const stopId = line.value.platform_to_stop[stopUpdate.stopId] || stopUpdate.stopId
@@ -366,6 +366,12 @@ function serviceActive(service, serviceDate) {
   const weekday = new Date(`${serviceDate}T12:00:00Z`).getUTCDay()
   const mondayIndex = weekday === 0 ? 6 : weekday - 1
   return service.weekdays?.[mondayIndex] === true
+}
+
+function onRoute65(trip) {
+  // A vehicle belongs to line 65 only by its routeId (or a known baked tripId).
+  // directionId must NOT widen this test — every bus in the feed has one.
+  return trip.routeId === line.value.route.id || Boolean(line.value.trip_directions[trip.tripId])
 }
 
 function resolveDirection(trip) {
