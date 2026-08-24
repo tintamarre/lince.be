@@ -10,12 +10,21 @@ const TIME_ZONE = 'Europe/Brussels'
 const TO_LIEGE = 'to_liege'
 const TO_AYWAILLE = 'to_aywaille'
 
+// GTFS-RT direction fallback: the live feed exposes a stable `directionId`
+// (0 = vers Aywaille/Remouchamps, 1 = vers Liège), which survives schedule
+// rollovers even when the baked tripId → direction map goes stale.
+const DIRECTION_BY_ID = {
+  0: { code: TO_AYWAILLE, label: 'to Aywaille', destination: 'Aywaille / Remouchamps', headsign: 'Remouchamps' },
+  1: { code: TO_LIEGE, label: 'to Liège', destination: 'Liège / Guillemins', headsign: 'Guillemins' },
+}
+
 const mapEl = ref(null)
 const line = ref(null)
 const selectedPatternId = ref('')
 const focusedVehicle = ref(null)
 const realtime = ref({ vehicles: [], arrivals: [], nextDepartures: {} })
 const loading = ref(true)
+const refreshing = ref(false)
 const status = ref('Chargement')
 const lastPull = ref(null)
 const error = ref('')
@@ -79,8 +88,9 @@ async function fetchLineData() {
 }
 
 async function refreshRealtime() {
-  if (!line.value || document.hidden) return
+  if (!line.value || document.hidden || refreshing.value) return
 
+  refreshing.value = true
   status.value = 'Mise à jour'
   try {
     const [vehicleFeed, tripFeed] = await Promise.all([
@@ -102,7 +112,15 @@ async function refreshRealtime() {
     console.error(err)
     status.value = 'Erreur flux'
     error.value = 'Le flux temps réel TEC est momentanément indisponible.'
+  } finally {
+    refreshing.value = false
   }
+}
+
+async function reloadNow() {
+  if (refreshTimer) window.clearInterval(refreshTimer)
+  await refreshRealtime()
+  refreshTimer = window.setInterval(refreshRealtime, REFRESH_MS)
 }
 
 async function fetchJson(url) {
@@ -244,7 +262,7 @@ function parseVehicles(feed) {
       const vehicle = entity.vehicle || {}
       const trip = vehicle.trip || {}
       const tripId = trip.tripId
-      const direction = line.value.trip_directions[tripId]
+      const direction = resolveDirection(trip)
       if (trip.routeId !== line.value.route.id && !direction) return null
       const position = vehicle.position || {}
       if (position.latitude == null || position.longitude == null) return null
@@ -271,7 +289,7 @@ function parseTripUpdates(feed, now) {
     const update = entity.tripUpdate || {}
     const trip = update.trip || {}
     const tripId = trip.tripId
-    const direction = line.value.trip_directions[tripId]
+    const direction = resolveDirection(trip)
     if (trip.routeId !== line.value.route.id && !direction) return
 
     ;(update.stopTimeUpdate || []).forEach((stopUpdate) => {
@@ -348,6 +366,12 @@ function serviceActive(service, serviceDate) {
   const weekday = new Date(`${serviceDate}T12:00:00Z`).getUTCDay()
   const mondayIndex = weekday === 0 ? 6 : weekday - 1
   return service.weekdays?.[mondayIndex] === true
+}
+
+function resolveDirection(trip) {
+  // Prefer the baked tripId map (richest labels), fall back to the live
+  // feed's directionId when the schedule period has rolled over.
+  return line.value.trip_directions[trip.tripId] || DIRECTION_BY_ID[trip.directionId] || null
 }
 
 function directionPayload(direction) {
@@ -488,9 +512,19 @@ function stopName(stopId) {
                 <strong class="block font-mono text-sm uppercase mt-2">{{ status }}</strong>
               </div>
             </div>
-            <p class="font-mono text-[11px] text-village-500">
-              Dernière mise à jour : {{ formatPull(lastPull) }}
-            </p>
+            <div class="flex items-center justify-between gap-3">
+              <p class="font-mono text-[11px] text-village-500">
+                Dernière mise à jour : {{ formatPull(lastPull) }}
+              </p>
+              <button
+                type="button"
+                class="border-2 border-village-900 bg-village-900 text-village-50 px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase transition-colors hover:bg-village-50 hover:text-village-900 disabled:opacity-40 disabled:cursor-not-allowed"
+                :disabled="refreshing || loading"
+                @click="reloadNow"
+              >
+                {{ refreshing ? 'Maj…' : 'Actualiser' }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
