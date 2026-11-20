@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # to dispatch the Deploy Site workflow
 
 concurrency:
   group: refresh-tec-65
@@ -41,3 +42,8 @@ jobs:
           git add public/data/tec-65.json
           git commit -m "chore(bus65): refresh tec-65.json from TEC GTFS feed"
           git push
+          # A push made with GITHUB_TOKEN does not trigger the Deploy Site
+          # workflow, so dispatch it explicitly or lince.be keeps stale data.
+          gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}

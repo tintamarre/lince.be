@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  # Triggered by refresh-tec-65.yml: pushes made with GITHUB_TOKEN don't fire `push`.
+  workflow_dispatch: {}
 
 permissions:
   contents: read

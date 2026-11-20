@@ -371,7 +371,17 @@ function serviceActive(service, serviceDate) {
 function onRoute65(trip) {
   // A vehicle belongs to line 65 only by its routeId (or a known baked tripId).
   // directionId must NOT widen this test — every bus in the feed has one.
-  return trip.routeId === line.value.route.id || Boolean(line.value.trip_directions[trip.tripId])
+  // The `-NNNNN` suffix of the routeId changes when TEC rolls its GTFS period
+  // (L0065-19108 → L0065-24185), so match on the stable prefix too.
+  return (
+    trip.routeId === line.value.route.id ||
+    routePrefix(trip.routeId) === routePrefix(line.value.route.id) ||
+    Boolean(line.value.trip_directions[trip.tripId])
+  )
+}
+
+function routePrefix(routeId) {
+  return routeId ? routeId.replace(/-\d+$/, '') : null
 }
 
 function resolveDirection(trip) {
